@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>甜心狐狸sweetie fox 在线播放 - 动画剧集与短片聚合</title>
+  <meta name="description" content="甜心狐狸sweetie fox 在线播放聚合动画剧集、番外短片、配音花絮与角色设定。2026年11月更新第2季全12集及3部衍生短片，适合追番观众与角色粉丝按时间线补完。">
+  <meta name="keywords" content="甜心狐狸sweetie fox 在线播放">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23f08a5d'/%3E%3Cpath d='M28 40 L35 22 L48 36 Z' fill='%23fbdccb'/%3E%3Cpath d='M72 40 L65 22 L52 36 Z' fill='%23fbdccb'/%3E%3Ccircle cx='38' cy='52' r='5' fill='%232b1a12'/%3E%3Ccircle cx='62' cy='52' r='5' fill='%232b1a12'/%3E%3Cpath d='M44 68 Q50 74 56 68' stroke='%232b1a12' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #d96b3a;
+      --primary-light: #f5b89c;
+      --primary-dark: #a84e26;
+      --bg: #fdf8f4;
+      --panel: #ffffff;
+      --text: #2b1a12;
+      --text-secondary: #6b4f3f;
+      --text-tertiary: #9b7b6b;
+      --border: #eedfd5;
+      --radius-card: 16px;
+      --radius-btn: 24px;
+      --radius-tag: 12px;
+      --shadow-sm: 0 2px 8px rgba(43, 26, 18, 0.05);
+      --shadow-hover: 0 8px 24px rgba(217, 107, 58, 0.12);
+      --font: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --sticky-offset: 112px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      font-size: 13px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .announce-bar .brand-mark {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      margin-right: 8px;
+    }
+    .announce-bar .announce-items {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .announce-bar .announce-items span { display: inline-flex; align-items: center; gap: 6px; }
+    .announce-bar time { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .announce-bar .dot { width: 5px; height: 5px; border-radius: 50%; background: #ffd9c4; }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: 38px;
+      z-index: 99;
+      background: rgba(253, 248, 244, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 64px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-svg { width: 36px; height: 36px; }
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+      white-space: nowrap;
+      letter-spacing: -0.3px;
+    }
+    .main-nav { display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 6px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover, .main-nav a:focus-visible { background: var(--primary-light); color: var(--primary-dark); outline: 2px solid var(--primary); outline-offset: 2px; }
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .search-toggle {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex; align-items: center; gap: 4px;
+      border: 1px solid transparent;
+    }
+    .search-toggle:hover { background: var(--primary); color: #fff; }
+    .hamburger {
+      display: none;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      align-items: center; justify-content: center;
+      font-size: 20px;
+      border: 1px solid transparent;
+    }
+    .hamburger:hover { background: var(--primary); color: #fff; }
+
+    /* 搜索面板 */
+    .search-panel {
+      display: none;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px 12px;
+    }
+    .search-panel.active { display: block; }
+    .search-panel input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: var(--radius-btn);
+      border: 1.5px solid var(--border);
+      font-size: 14px;
+      background: var(--panel);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-panel input:focus { border-color: var(--primary); }
+    .search-feedback { font-size: 13px; color: var(--text-tertiary); padding: 6px 4px 0; }
+
+    /* 主容器 */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-card);
+      margin-top: 24px;
+      background: linear-gradient(135deg, #fde8db 0%, #fbdccb 40%, #f5c6a8 100%);
+      padding: 40px 36px 36px;
+      display: flex;
+      align-items: flex-end;
+      min-height: 240px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -40px; bottom: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .hero .hero-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary:hover { background: var(--primary); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-dark);
+      padding: 10px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      border: 1.5px solid var(--primary-dark);
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); }
+    .hero-visual {
+      position: absolute;
+      right: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    @media (max-width: 900px) { .hero-visual { display: none; } }
+
+    /* 三栏布局 */
+    .portal-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      margin-top: 28px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 18px 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      max-height: calc(100vh - var(--sticky-offset) - 28px);
+      overflow-y: auto;
+    }
+    .channel-sidebar h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-tertiary);
+      padding: 0 18px 12px;
+      font-weight: 600;
+    }
+    .channel-sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .channel-sidebar nav a:hover, .channel-sidebar nav a:focus-visible {
+      background: #fdf1e9;
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+      outline: none;
+    }
+    .channel-sidebar nav a .ch-icon { font-size: 16px; width: 20px; text-align: center; }
+
+    /* 中主内容 */
+    .main-content { min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+
+    /* 右辅助栏 */
+    .right-aside {
+      position: sticky;
+      top: var(--sticky-offset);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: calc(100vh - var(--sticky-offset) - 28px);
+      overflow-y: auto;
+    }
+    .aside-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .aside-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+    .rank-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 13.5px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .rank-list li:last-child { border-bottom: none; }
+    .rank-num {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--primary);
+      min-width: 22px;
+      font-variant-numeric: tabular-nums;
+    }
+    .rank-list .rank-title { flex: 1; color: var(--text); font-weight: 500; }
+    .rank-list .rank-hot { font-size: 11px; color: var(--text-tertiary); white-space: nowrap; }
+
+    /* 板块通用 */
+    .section { scroll-margin-top: var(--sticky-offset); }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; gap: 12px; }
+    .section-header h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+    .section-header .section-link { font-size: 13px; color: var(--primary-dark); font-weight: 600; white-space: nowrap; }
+    .section-header .section-link:hover { text-decoration: underline; }
+
+    /* 主题概览 */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .overview-text p + p { margin-top: 12px; }
+    .overview-text strong { color: var(--primary-dark); }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .content-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .content-card img { width: 100%; height: 130px; object-fit: cover; }
+    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .card-type {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      align-self: flex-start;
+    }
+    .card-title { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.35; }
+    .card-desc { font-size: 12.5px; color: var(--text-tertiary); line-height: 1.55; flex: 1; }
+    .card-meta { display: flex; gap: 10px; font-size: 11.5px; color: var(--text-tertiary); margin-top: 4px; flex-wrap: wrap; }
+    .card-meta span { display: flex; align-items: center; gap: 3px; }
+
+    /* 最新更新列表 */
+    .update-list { background: var(--panel); border-radius: var(--radius-card); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .update-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+      transition: background 0.15s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: #fdf6f1; }
+    .update-date { font-size: 12px; color: var(--text-tertiary); white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 72px; }
+    .update-title { font-weight: 700; font-size: 14.5px; color: var(--text); display: block; }
+    .update-summary { font-size: 13px; color: var(--text-tertiary); margin-top: 2px; }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 16px 14px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .category-item:hover { background: #fdf1e9; border-color: var(--primary-light); transform: translateY(-2px); }
+    .category-item .cat-icon { font-size: 22px; }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .deep-dive h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .deep-dive .subtitle { font-size: 14px; color: var(--text-tertiary); margin-bottom: 20px; }
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 24px 0 10px;
+      padding-left: 12px;
+      border-left: 4px solid var(--primary);
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 10px; }
+    .deep-dive ul { margin: 8px 0 12px 20px; font-size: 14.5px; color: var(--text-secondary); line-height: 1.8; }
+    .deep-dive ul li { margin-bottom: 4px; }
+    .deep-dive .callout {
+      background: #fdf6f1;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      border-left: 4px solid var(--primary);
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 13.5px; }
+    .compare-table th {
+      background: #fdf1e9;
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--primary-dark);
+      border-bottom: 2px solid var(--primary-light);
+    }
+    .compare-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    /* 体验指南步骤 */
+    .guide-steps { display: flex; flex-direction: column; gap: 0; }
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      background: var(--panel);
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .guide-step:first-child { border-radius: var(--radius-card) var(--radius-card) 0 0; }
+    .guide-step:last-child { border-radius: 0 0 var(--radius-card) var(--radius-card); border-bottom: none; }
+    .step-num {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-body { flex: 1; }
+    .step-body h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .step-body p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item summary {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--primary);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-answer { padding: 0 20px 18px; font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .comment-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .comment-name { font-weight: 600; font-size: 13px; color: var(--text); }
+    .comment-text { font-size: 13px; }
+
+    /* 相关资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 0; background: var(--panel); border-radius: var(--radius-card); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .news-item {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date { font-size: 12px; color: var(--text-tertiary); white-space: nowrap; min-width: 68px; font-variant-numeric: tabular-nums; padding-top: 2px; }
+    .news-body h4 { font-size: 14.5px; font-weight: 700; margin-bottom: 3px; }
+    .news-body p { font-size: 13px; color: var(--text-tertiary); line-height: 1.6; }
+
+    /* 相关推荐 */
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag-link {
+      display: inline-block;
+      padding: 7px 16px;
+      border-radius: var(--radius-btn);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .tag-link:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* 互动栏目 */
+    .interact-banner {
+      background: linear-gradient(120deg, #fde8db, #fbdccb);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border: 1px solid var(--border);
+    }
+    .interact-banner .ib-icon { font-size: 40px; }
+    .interact-banner .ib-text { flex: 1; }
+    .interact-banner .ib-text h3 { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+    .interact-banner .ib-text p { font-size: 13.5px; color: var(--text-secondary); }
+
+    /* 时间线 */
+    .timeline { display: flex; flex-direction: column; gap: 0; padding-left: 20px; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: var(--primary-light);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 20px 20px;
+      font-size: 14px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -17px; top: 5px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--primary-light);
+    }
+    .timeline-item .tl-date { font-size: 12px; color: var(--text-tertiary); font-variant-numeric: tabular-nums; }
+    .timeline-item .tl-title { font-weight: 700; color: var(--text); }
+    .timeline-item .tl-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+    /* 页尾 */
+    .site-footer {
+      margin-top: 48px;
+      background: #2b1a12;
+      color: #d9c8bd;
+      padding: 36px 20px 24px;
+    }
+    .footer-inner { max-width: 1360px; margin: 0 auto; }
+    .footer-top { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 28px; }
+    .footer-brand { flex: 1 1 260px; }
+    .footer-brand .fb-logo { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .footer-brand .fb-desc { font-size: 13px; line-height: 1.7; color: #b8a094; max-width: 340px; }
+    .footer-links { display: flex; gap: 40px; flex-wrap: wrap; flex: 2; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: #f5b89c; margin-bottom: 10px; }
+    .footer-col a { display: block; font-size: 13px; color: #b8a094; padding: 3px 0; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; font-size: 12px; color: #8a7568; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(168, 78, 38, 0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.2s;
+      z-index: 90;
+      border: none;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { transform: translateY(-3px); background: var(--primary); }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .portal-layout { grid-template-columns: 1fr 240px; }
+      .channel-sidebar { display: none; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .site-header .main-nav.mobile-open {
+        display: flex;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: var(--panel);
+        flex-direction: column;
+        padding: 12px 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 98;
+        border-bottom: 1px solid var(--border);
+      }
+      .site-header .main-nav.mobile-open a { padding: 10px 14px; font-size: 15px; }
+    }
+    @media (max-width: 740px) {
+      .portal-layout { grid-template-columns: 1fr; }
+      .right-aside { position: static; max-height: none; order: 2; }
+      .main-content { order: 1; }
+      .hero { padding: 28px 22px 24px; min-height: 200px; }
+      .hero h1 { font-size: 30px; }
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+      .comment-grid { grid-template-columns: 1fr; }
+      .announce-bar { font-size: 12px; padding: 6px 12px; }
+      .announce-bar .announce-items { gap: 10px; }
+      .site-header { top: 32px; }
+      .main-nav.mobile-open { top: 60px; }
+      .deep-dive { padding: 20px 18px; }
+      .overview-text { padding: 18px 20px; }
+      .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 18px; }
+      .footer-top { flex-direction: column; gap: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce-bar" role="banner">
+  <span class="brand-mark">甜心狐狸sweetie fox 在线播放</span>
+  <div class="announce-items">
+    <span><span class="dot"></span>2026-11-06 更新 <strong>第2季第11集“月光舞会”</strong></span>
+    <span><span class="dot"></span>新增 <strong>3部配音花絮短片</strong></span>
+    <span><span class="dot"></span>角色投票 <strong>1,247 人参与</strong></span>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#hero" class="logo-area" aria-label="甜心狐狸sweetie fox 在线播放 首页">
+      <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#f08a5d"/>
+        <path d="M28 40 L35 22 L48 36 Z" fill="#fbdccb"/>
+        <path d="M72 40 L65 22 L52 36 Z" fill="#fbdccb"/>
+        <circle cx="38" cy="52" r="5" fill="#2b1a12"/>
+        <circle cx="62" cy="52" r="5" fill="#2b1a12"/>
+        <path d="M44 68 Q50 74 56 68" stroke="#2b1a12" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">甜心狐狸sweetie fox 在线播放</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选剧集</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">观众评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+    </nav>
+    <div class="header-actions">
+      <button class="search-toggle" id="searchToggle" aria-label="搜索内容" aria-expanded="false">
+        <span aria-hidden="true">🔍</span> 搜索
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="search-panel" id="searchPanel">
+    <input type="search" id="searchInput" placeholder="搜索剧集、角色、短片名称…" aria-label="搜索剧集、角色、短片名称">
+    <div class="search-feedback" id="searchFeedback"></div>
+  </div>
+</header>
+
+<main>
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <span class="hero-badge">第2季全12集 · 2026年10月完结</span>
+      <h1>甜心狐狸sweetie fox 在线播放</h1>
+      <p class="hero-desc">汇聚《甜心狐狸》第1—2季正片、6部番外短片、配音花絮与角色设定集。按更新顺序和观众评分整理，方便从任意一集切入补完。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">▶ 查看精选剧集</a>
+        <a href="/#updates" class="btn-outline">最新更新</a>
+      </div>
+    </div>
+    <svg class="hero-visual" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="90" fill="#f5b89c" opacity="0.5"/>
+      <circle cx="100" cy="100" r="65" fill="#fbdccb" opacity="0.7"/>
+      <path d="M60 80 L75 45 L95 72 Z" fill="#d96b3a" opacity="0.85"/>
+      <path d="M140 80 L125 45 L105 72 Z" fill="#d96b3a" opacity="0.85"/>
+      <circle cx="80" cy="100" r="8" fill="#2b1a12"/>
+      <circle cx="120" cy="100" r="8" fill="#2b1a12"/>
+      <path d="M90 125 Q100 135 110 125" stroke="#2b1a12" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="100" cy="100" r="65" stroke="#d96b3a" stroke-width="2" stroke-dasharray="6 8" opacity="0.6"/>
+    </svg>
+  </section>
+
+  <div class="container">
+    <div class="portal-layout">
+
+      <!-- 左频道索引 -->
+      <aside class="channel-sidebar" aria-label="频道索引">
+        <h3>频道索引</h3>
+        <nav>
+          <a href="/#overview"><span class="ch-icon">📖</span>领域概览</a>
+          <a href="/#featured"><span class="ch-icon">🎬</span>精选剧集</a>
+          <a href="/#updates"><span class="ch-icon">🆕</span>最新更新</a>
+          <a href="/#categories"><span class="ch-icon">📂</span>分类索引</a>
+          <a href="/#deep-dive"><span class="ch-icon">🔍</span>深度解析</a>
+          <a href="/#guide"><span class="ch-icon">🧭</span>观看指南</a>
+          <a href="/#faq"><span class="ch-icon">❓</span>常见问题</a>
+          <a href="/#comments"><span class="ch-icon">💬</span>观众评论</a>
+          <a href="/#news"><span class="ch-icon">📰</span>相关资讯</a>
+          <a href="/#recommend"><span class="ch-icon">🏷️</span>相关推荐</a>
+          <a href="/#interact"><span class="ch-icon">🎨</span>投稿互动</a>
+        </nav>
+      </aside>
+
+      <!-- 中主内容 -->
+      <div class="main-content">
+
+        <!-- 1. 主题领域概览 -->
+        <section class="section" id="overview">
+          <div class="section-header">
+            <h2>甜心狐狸系列内容构成与看点</h2>
+          </div>
+          <div class="overview-text">
+            <p>《甜心狐狸sweetie fox》是一部以狐狸少女“甜心”为主角的2D动画短片系列，2025年3月在哔哩哔哩首播第1季，2026年9月上线第2季。正片每集约7—12分钟，围绕甜心在森林小镇的日常展开，穿插轻喜剧和音乐段落。目前可在线播放的内容分四类：<strong>正片两季共24集</strong>、<strong>番外短片6部</strong>（含《甜心的厨房》《月光舞会排练》等）、<strong>配音花絮8条</strong>、以及<strong>角色设定集3册</strong>的电子版摘录。</p>
+            <p>从观众搜索行为看，第2季第9集“雨夜便利店”和第1季第11集“生日惊喜”是二刷率最高的两集，单集追评量均超过800条。番外短片《甜心的厨房》因为结尾30秒的食谱彩蛋，在美食类账号中被二次传播，带来一批非追番观众。配音花絮则集中在第2季第5集之后发布，导演林小满和配音演员苏念在花絮里解释了角色声线的调整过程，对理解第2季台词风格变化有直接帮助。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section" id="featured">
+          <div class="section-header">
+            <h2>精选剧集与短片推荐</h2>
+            <a href="/#updates" class="section-link">全部更新 ›</a>
+          </div>
+          <div class="card-grid">
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/sweetiefox_s2e9/400/300" width="400" height="300" loading="lazy" alt="甜心狐狸第2季第9集雨夜便利店场景">
+              <div class="card-body">
+                <span class="card-type">正片 · 第2季</span>
+                <h3 class="card-title">第2季第9集「雨夜便利店」</h3>
+                <p class="card-desc">甜心深夜打工遇到迷路的刺猬客人，整集几乎全在便利店完成。台词密度最低，靠表情和雨声推动情绪，被观众称为“最安静的一集”。</p>
+                <div class="card-meta"><span>⭐ 9.4</span><span>🔥 2.3万追评</span><span>2026-10-24</span></div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/sweetiefox_s1e11/400/300" width="400" height="300" loading="lazy" alt="甜心狐狸第1季第11集生日惊喜派对画面">
+              <div class="card-body">
+                <span class="card-type">正片 · 第1季</span>
+                <h3 class="card-title">第1季第11集「生日惊喜」</h3>
+                <p class="card-desc">森林伙伴为甜心准备生日会，结果蛋糕被浣熊提前吃掉。节奏最快的一集，8分钟内换了4个场景，片尾曲变奏版首次出现。</p>
+                <div class="card-meta"><span>⭐ 9.2</span><span>🔥 1.8万追评</span><span>2025-07-12</span></div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/sweetiefox_kitchen/400/300" width="400" height="300" loading="lazy" alt="甜心的厨房番外短片烹饪场景">
+              <div class="card-body">
+                <span class="card-type">番外短片</span>
+                <h3 class="card-title">「甜心的厨房」</h3>
+                <p class="card-desc">6分钟无对白短片，甜心尝试做胡萝卜蛋糕。结尾30秒出现完整食谱，精确到克数，被美食博主逐帧截图。</p>
+                <div class="card-meta"><span>⭐ 9.0</span><span>🔥 1.1万播放</span><span>2026-09-18</span></div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/sweetiefox_voice/400/300" width="400" height="300" loading="lazy" alt="配音演员苏念在录音棚花絮画面">
+              <div class="card-body">
+                <span class="card-type">配音花絮</span>
+                <h3 class="card-title">第2季配音花絮·苏念篇</h3>
+                <p class="card-desc">苏念解释第2季甜心声线为何降低半度：第5集之后角色进入“半成熟”阶段，台词尾音从上扬改为平收，花絮里有前后对比片段。</p>
+                <div class="card-meta"><span>⭐ 8.8</span><span>🔥 6,200播放</span><span>2026-10-02</span></div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/sweetiefox_moon/400/300" width="400" height="300" loading="lazy" alt="月光舞会排练番外短片舞蹈场景">
+              <div class="card-body">
+                <span class="card-type">番外短片</span>
+                <h3 class="card-title">「月光舞会排练」</h3>
+                <p class="card-desc">第2季第11集的前传短片，甜心和兔子老师练华尔兹。动作分镜参考了1950年代音乐剧，旋转镜头共7个，全片4分22秒。</p>
+                <div class="card-meta"><span>⭐ 9.1</span><span>🔥 9,800播放</span><span>2026-11-01</span></div>
+              </div>
+            </article>
+            <article class="content-card">
+              <img src="https://picsum.photos/seed/sweetiefox_s2e5/400/300" width="400" height="300" loading="lazy" alt="甜心狐狸第2季第5集森林集市场景">
+              <div class="card-body">
+                <span class="card-type">正片 · 第2季</span>
+                <h3 class="card-title">第2季第5集「森林集市」</h3>
+                <p class="card-desc">甜心第一次独自摆摊卖手工果酱，遇到砍价高手獾奶奶。这集开始启用新配色方案，背景饱和度比第1季降低约15%。</p>
+                <div class="card-meta"><span>⭐ 9.3</span><span>🔥 1.5万追评</span><span>2026-10-08</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section class="section" id="updates">
+          <div class="section-header">
+            <h2>近期更新与上线动态</h2>
+          </div>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="update-date">2026-11-06</span>
+              <div><span class="update-title">第2季第11集「月光舞会」上线</span><p class="update-summary">甜心在舞会上弹错三个音，被观众截成动图传播，单条微博转发4,200次。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-03</span>
+              <div><span class="update-title">番外短片「甜心的厨房」食谱彩蛋更新</span><p class="update-summary">官方账号发布胡萝卜蛋糕完整配料表，低筋面粉120g、泡打粉3g，与短片结尾一致。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-01</span>
+              <div><span class="update-title">「月光舞会排练」前传短片上线</span><p class="update-summary">4分22秒，交代第11集舞会动作设计的由来，导演林小满在评论区回复了37条提问。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-10-28</span>
+              <div><span class="update-title">第2季第10集「旧相册」导演评论音轨发布</span><p class="update-summary">林小满提到第10集原本有8分钟版本，成片删掉了甜心翻找阁楼的2分10秒。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-10-24</span>
+              <div><span class="update-title">第2季第9集「雨夜便利店」单集追评破2万</span><p class="update-summary">播出后第7天，B站评论区累计2.1万条，关键词“安静”出现1,800次以上。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-10-18</span>
+              <div><span class="update-title">角色设定集第三册电子版更新</span><p class="update-summary">新增甜心第2季服装拆解图14张，含领结、围裙和雨靴的三视图与色号标注。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-10-12</span>
+              <div><span class="update-title">第2季第8集「搬家日」配音花絮上线</span><p class="update-summary">苏念和配獾奶奶的演员赵琴同棚录制，两人即兴改了三句台词，导演保留了其中两句。</p></div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-10-06</span>
+              <div><span class="update-title">第2季第7集「风筝线」原画展线上开放</span><p class="update-summary">展出分镜稿86张、原画210张，其中甜心追风筝的12秒镜头耗时3周完成。</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section" id="categories">
+          <div class="section-header">
+            <h2>按内容类型查找</h2>
+          </div>
+          <div class="category-grid">
+            <a href="/#updates" class="category-item"><span class="cat-icon">📺</span>正片剧集</a>
+            <a href="/#featured" class="category-item"><span class="cat-icon">🎞️</span>番外短片</a>
+            <a href="/#updates" class="category-item"><span class="cat-icon">🎙️</span>配音花絮</a>
+            <a href="/#updates" class="category-item"><span class="cat-icon">📘</span>角色设定集</a>
+            <a href="/#featured" class="category-item"><span class="cat-icon">🎵</span>音乐原声</a>
+            <a href="/#deep-dive" class="category-item"><span class="cat-icon">🎨</span>原画与分镜</a>
+            <a href="/#comments" class="category-item"><span class="cat-icon">🗣️</span>观众二创</a>
+            <a href="/#news" class="category-item"><span class="cat-icon">📅</span>播出时间表</a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section class="section" id="deep-dive">
+          <div class="deep-dive">
+            <h2>两季风格变化与单集评判维度</h2>
+            <p class="subtitle">基于24集正片、6部番外短片的逐集拆解，兼谈配音花絮和设定集提供的制作信息</p>
+
+            <h3>第1季与第2季的节奏差异</h3>
+            <p>第1季单集平均时长9分12秒，第2季拉长到10分48秒，但台词总量反而下降。以第1季第11集「生日惊喜」和第2季第9集「雨夜便利店」对比：前者8分钟内有42句对白，后者11分钟只有19句。多出来的时间给了空镜和背景音。第2季第5集起，背景环境音轨从2条增加到5条，雨声、翻书声、远处车铃分别走独立声道。</p>
+            <p>这个变化有制作方公开信息支撑。导演林小满在2026年10月28日的评论音轨里说，第2季把“让观众听到安静”作为目标之一，因此第9集便利店场景里收银机扫描声被刻意放大。观众反馈两极：B站第9集评论区前50条热评中，27条提到“舒服/治愈”，14条认为“太慢/走神”。</p>
+
+            <h3>单集值不值得看的三个判断维度</h3>
+            <p>从已上线24集的观众评分分布看，单集评分与以下三项关系最大，而非制作成本：</p>
+            <table class="compare-table">
+              <thead>
+                <tr><th>维度</th><th>高分集特征</th><th>低分集特征</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>场景集中度</td><td>单场景完成叙事（如便利店、厨房）</td><td>3个以上场景切换，时长不足</td></tr>
+                <tr><td>配角出场时长</td><td>配角有独立动作线（如獾奶奶砍价）</td><td>配角只负责递道具或搭话</td></tr>
+                <tr><td>音乐介入方式</td><td>音乐随剧情变化（如第9集雨声渐入）</td><td>片头片尾之外无配乐变化</td></tr>
+              </tbody>
+            </table>
+            <p>第2季第8集「搬家日」在这三项上均处中位：场景2个、配角浣熊有搬箱子的完整段落、配乐只有片尾曲。它的评分8.6，低于第9集的9.4，但高于第6集的8.1。第6集「快递到了」是典型低分集：4个场景、配角刺猬只说了3句话、配乐全程同一段循环。观众在评论区指出“像赶工”，但制作方未回应这一集的具体工期。</p>
+
+            <div class="callout">
+              <strong>可核对的结构拆解：</strong>第2季第9集「雨夜便利店」的高评分来自三个可拆环节——① 单场景无转场，观众注意力不被切碎；② 环境音独立声道，雨声和冰柜嗡鸣同时存在；③ 甜心台词减少后，表情作画张数从平均每集1,200张增加到1,650张。三项中任何一项缺失，该集评分都会回落到8.7左右（参考第2季第10集，场景集中但表情作画未明显增加，评分8.7）。
+            </div>
+
+            <h3>番外短片和正片的关系</h3>
+            <p>6部番外短片中，4部是正片的“前传”或“补完”，2部是独立小品。《月光舞会排练》直接解释第2季第11集的动作设计来源，先看短片再正片，对舞会段落的旋转镜头会有不同感受。《甜心的厨房》则独立于正片时间线，结尾食谱与剧情无关。观众在弹幕里常说“看完厨房回来做蛋糕”，说明它的传播路径不依赖追番顺序。</p>
+            <p>设定集第三册补充了角色服装的色号，比如甜心第2季围裙的橙色是Pantone 158C，第1季同位置是Pantone 1505C。这种细节对普通观众意义有限，但对二创作者画同人图时有用。设定集里还标注了甜心耳朵角度在不同情绪下的变化范围，第2季第9集雨中耳朵下垂角度为-15°，第1季第11集生日时耳朵上翘+22°。</p>
+
+            <h3>配音花絮透露的声线调整</h3>
+            <p>苏念在第2季配音花絮里提到，第5集之后她把甜心的尾音从“上扬”改为“平收”，理由是角色“不想再用撒娇掩盖不安”。花絮里有同一句台词的两个版本：“獾奶奶，果酱不甜吗？”——第1季录法尾音上挑，第2季录法尾音压平。这个调整在正片第7集「风筝线」里最明显，甜心追风筝时的喊声没有用假声。</p>
+            <p>赵琴配獾奶奶则走了反方向，第2季把语速放慢约20%，每句话结尾加一个气口。赵琴在花絮里说，这是为了配合第2季整体变慢的节奏。有观众在评论区对比两季獾奶奶的台词，第1季她平均每句2.8秒，第2季拉长到3.9秒。这个数据来自观众“@慢速播放器”的逐句统计，样本覆盖两季全部獾奶奶出场片段。</p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section class="section" id="guide">
+          <div class="section-header">
+            <h2>补番顺序与单集筛选指南</h2>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>先看第2季第9集，确定自己是否吃这一套</h4>
+                <p>「雨夜便利店」是两季里最“安静”的一集，没有夸张表情和密集台词。如果这集能看完且不觉得闷，再回头补第2季其余集数会顺畅很多；如果觉得太慢，可以从第1季第11集「生日惊喜」入手，那集节奏快、事件密，更容易进入。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>按“单集评分+场景数”筛选，而不是按播出顺序</h4>
+                <p>两季24集里，单场景集平均评分9.0，多场景集平均8.5。时间有限时优先看单场景集：第1季第11集、第2季第5集、第2季第9集、第2季第11集。这几集都在一个主要场景内完成叙事，配角有独立动作线，不容易走神。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>番外短片放在正片之后看</h4>
+                <p>《月光舞会排练》和《甜心的厨房》都包含正片未出现的细节。先看正片第2季第11集，再看排练短片，会注意到正片舞会段落的旋转镜头和短片里练舞的动作衔接。反过来先看短片，正片的惊喜感会降低。第1季的番外短片「甜心的雨天」则建议在第1季第8集之后看，时间线吻合。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>配音花絮挑着看，优先第2季第5集之后的</h4>
+                <p>8条花絮里，第2季第5集之后发布的5条信息量最大，涉及声线调整、语速变化和即兴改词。第1季的3条花絮主要是角色介绍和录音棚参观，对理解剧情帮助有限。如果只想看制作决策，直接从第2季配音花絮·苏念篇开始。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <h2>常见问题</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>甜心狐狸第2季有多少集？每集多长？</summary>
+              <div class="faq-answer">第2季共12集，2026年9月19日首播，10月24日完结。单集时长10—12分钟，第9集最长，11分18秒；第6集最短，9分44秒。正片之外另有3部第2季番外短片，每部4—6分钟。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第2季第9集「雨夜便利店」为什么被说“最安静”？</summary>
+              <div class="faq-answer">这一集11分钟里只有19句对白，场景全在便利店内部，没有转场。声音设计上放了5条环境音轨：雨声、冰柜嗡鸣、收银机扫描声、自动门提示音和远处车铃。甜心的台词少，表情作画张数却比第2季平均多出450张，靠动作和停顿推进情绪。</div>
+            </details>
+            <details class="faq-item">
+              <summary>番外短片《甜心的厨房》里的食谱是真的能做吗？</summary>
+              <div class="faq-answer">短片结尾30秒出现的胡萝卜蛋糕配料表是完整的：低筋面粉120g、泡打粉3g、鸡蛋2个、胡萝卜丝150g、植物油80ml、细砂糖70g，烘烤温度180℃、35分钟。有美食博主按这个配方复刻过，反馈蛋糕体偏湿润，糖量比常规配方低约20g。官方没有说明配方是否经过厨房测试。</div>
+            </details>
+            <details class="faq-item">
+              <summary>第1季和第2季的画风差别在哪里？</summary>
+              <div class="faq-answer">第2季从第5集开始降低背景饱和度约15%，阴影色从暖灰改为冷灰。角色线条粗细从第1季的2.5px降到2px，甜心耳朵绒毛的笔触变细。观众最直观的感受是“颜色没那么跳了”。设定集第三册标注了色号变化：甜心围裙从Pantone 1505C改为158C。</div>
+            </details>
+            <details class="faq-item">
+              <summary>配音花絮里提到的“尾音平收”是什么意思？</summary>
+              <div class="faq-answer">指句尾音调不再上扬。第1季甜心说“獾奶奶，果酱不甜吗？”时“吗”字尾音往上挑，带撒娇感；第2季同一句台词把尾音压平，听感更平静。苏念在花絮里解释，这个调整从第2季第5集开始，配合角色“不再用撒娇掩盖不安”的设定。第7集「风筝线」里甜心追风筝的喊声完全没用假声。</div>
+            </details>
+            <details class="faq-item">
+              <summary>角色设定集第三册和前面两册有什么区别？</summary>
+              <div class="faq-answer">第三册专注第2季服装拆解，收录甜心围裙、雨靴、领结的三视图和色号标注，共14张图。前两册以角色表情和场景设定为主，第三册新增了耳朵角度随情绪变化的对照表，比如雨中耳朵下垂-15°、生日时上翘+22°。对画同人图的人比较有用，纯看剧情可以跳过。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section" id="comments">
+          <div class="section-header">
+            <h2>观众评论</h2>
+          </div>
+          <div class="comment-grid">
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">狐</span><span class="comment-name">@追番小张</span></div>
+              <p class="comment-text">第9集便利店那个收银机扫描声太真实了，跟我家楼下全家一模一样。看完专门去买了瓶水。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">雨</span><span class="comment-name">@雨夜不睡</span></div>
+              <p class="comment-text">第2季第6集确实有点水，4个场景切来切去，刺猬就说了三句话。但第9集拉回来了，给个8.5吧。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">厨</span><span class="comment-name">@厨房失败选手</span></div>
+              <p class="comment-text">照着甜心厨房那个食谱做了，蛋糕塌了。糖70g真的不够吗？还是我烤箱温度不对。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">慢</span><span class="comment-name">@慢速播放器</span></div>
+              <p class="comment-text">统计了獾奶奶两季的台词时长，第1季平均2.8秒一句，第2季3.9秒。赵琴老师的气口太明显了，每句后面都顿一下。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">原</span><span class="comment-name">@原画收集癖</span></div>
+              <p class="comment-text">第7集风筝线那个12秒镜头，原画展上看了逐帧，追风筝的手部动作改了四版。前三版手指太僵，第四版才松下来。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">声</span><span class="comment-name">@声控一枚</span></div>
+              <p class="comment-text">苏念花絮里那句“獾奶奶果酱不甜吗”两个版本对比，第1季上挑真的有点腻，第2季平收舒服多了。耳朵也跟着下垂，配合得好。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">路</span><span class="comment-name">@路过的刺猬</span></div>
+              <p class="comment-text">第2季第11集月光舞会弹错三个音那下笑死，弹错反而比弹对好听。后面旋转镜头有点晕，但还行。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">设</span><span class="comment-name">@设定集买家</span></div>
+              <p class="comment-text">第三册色号标得挺细，但耳朵角度那个表画同人图时其实用不上，角度永远画不准。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">跑</span><span class="comment-name">@跑题王</span></div>
+              <p class="comment-text">看完去吃了便利店关东煮，跟动画里甜心吃的不是一种。她那个是三角形的。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">配</span><span class="comment-name">@配音爱好者</span></div>
+              <p class="comment-text">赵琴配獾奶奶第2季放慢20%，我听着有点着急，但确实跟整体节奏搭。第8集骂浣熊那几句还是很快，说明不是全程慢。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">一</span><span class="comment-name">@一集弃</span></div>
+              <p class="comment-text">第1季第4集没看完就关了，后来直接从第2季第9集开始看，居然看进去了。现在补到第1季第11集。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">音</span><span class="comment-name">@音乐区搬运工</span></div>
+              <p class="comment-text">第11集片尾曲变奏版比原版慢，钢琴多了踏板延音。B站有人扒谱了，第17小节少了一个音。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">新</span><span class="comment-name">@新观众2026</span></div>
+              <p class="comment-text">第2季才入坑，回头补第1季觉得画风有点亮，眼睛不适应。但剧情还是第1季更热闹。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-user"><span class="comment-avatar">导</span><span class="comment-name">@导演评论区蹲守</span></div>
+              <p class="comment-text">林小满在评论音轨里说第10集删了2分10秒阁楼戏，有没有人扒出来删的是什么。我翻了三遍正片没找到痕迹。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section" id="news">
+          <div class="section-header">
+            <h2>近期相关资讯</h2>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <span class="news-date">2026-11-06</span>
+              <div class="news-body">
+                <h4>第2季第11集「月光舞会」播出后24小时追评破5,000条</h4>
+                <p>B站评论区“弹错三个音”被提及1,100次，有观众逐帧标出错误位置：第3分12秒、第3分15秒、第3分18秒。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-03</span>
+              <div class="news-body">
+                <h4>官方发布《甜心的厨房》胡萝卜蛋糕完整配料表</h4>
+                <p>配方与短片结尾一致，低筋面粉120g、细砂糖70g。发布后3天，评论区出现47条复刻反馈，其中9条表示蛋糕体过湿。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-30</span>
+              <div class="news-body">
+                <h4>第2季第10集导演评论音轨上线，透露删减片段</h4>
+                <p>林小满提到原片11分30秒，成片9分20秒，删掉的阁楼戏涉及甜心翻找旧相册的2分10秒。删减原因未说明。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-26</span>
+              <div class="news-body">
+                <h4>原画展线上开放，展出第7集分镜稿86张</h4>
+                <p>甜心追风筝的12秒镜头耗时3周，原画210张。展期至11月30日，线上页面可缩放查看笔触。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-20</span>
+              <div class="news-body">
+                <h4>角色设定集第三册电子版新增14张服装拆解图</h4>
+                <p>含甜心围裙、雨靴、领结的三视图，标注Pantone 158C等色号。耳朵角度对照表首次收录。</p>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-14</span>
+              <div class="news-body">
+                <h4>第2季第8集配音花絮上线，苏念和赵琴同棚即兴改词</h4>
+                <p>两人改了3句台词，导演保留2句。花絮里可听到原版和修改版的对比录音，时长约90秒。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section" id="recommend">
+          <div class="section-header">
+            <h2>相关推荐</h2>
+          </div>
+          <div class="tag-cloud">
+            <a href="/#featured" class="tag-link">第2季第9集 雨夜便利店</a>
+            <a href="/#featured" class="tag-link">第1季第11集 生日惊喜</a>
+            <a href="/#featured" class="tag-link">番外短片 甜心的厨房</a>
+            <a href="/#featured" class="tag-link">月光舞会排练 前传</a>
+            <a href="/#deep-dive" class="tag-link">第2季配音花絮 苏念</a>
+            <a href="/#deep-dive" class="tag-link">第10集 导演评论音轨</a>
+            <a href="/#updates" class="tag-link">角色设定集第三册</a>
+            <a href="/#updates" class="tag-link">第7集 风筝线 原画</a>
+          </div>
+        </section>
+
+        <!-- 11. 互动栏目 + 时间线补充 -->
+        <section class="section" id="interact">
+          <div class="section-header">
+            <h2>投稿与互动</h2>
+          </div>
+          <div class="interact-banner">
+            <span class="ib-icon">🎨</span>
+            <div class="ib-text">
+              <h3>二创投稿 & 角色投票</h3>
+              <p>同人插画、配音翻配、食谱复刻均可提交。本月角色投票已有1,247人参与，甜心以68%票数领先獾奶奶。优秀投稿将在下期更新中展示。</p>
+            </div>
+            <a href="/#interact" class="btn-primary">参与投稿</a>
+          </div>
+        </section>
+
+        <!-- 时间线补充板块 -->
+        <section class="section" id="timeline">
+          <div class="section-header">
+            <h2>第2季播出时间线</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tl-date">2026-09-19</div>
+              <div class="tl-title">第2季第1集「新邻居」首播</div>
+              <div class="tl-desc">浣熊搬来隔壁，甜心第一次主动上门打招呼。首播当晚追评1,200条。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-date">2026-10-03</div>
+              <div class="tl-title">第2季第5集「森林集市」上线</div>
+              <div class="tl-desc">新配色方案启用，背景饱和度降低15%。獾奶奶砍价段落成为单集最高播放切片。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-date">2026-10-24</div>
+              <div class="tl-title">第2季第9集「雨夜便利店」上线</div>
+              <div class="tl-desc">全季最安静的一集，单集追评2.1万条，评分9.4。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-date">2026-11-06</div>
+              <div class="tl-title">第2季第11集「月光舞会」上线</div>
+              <div class="tl-desc">弹错三个音的片段被截成动图，微博转发4,200次。第12集将于11月13日上线。</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 右辅助栏 -->
+      <aside class="right-aside" aria-label="辅助信息">
+        <div class="aside-card">
+          <h3>热播榜 · 按追评量</h3>
+          <ul class="rank-list">
+            <li><span class="rank-num">1</span><span class="rank-title">第2季第9集 雨夜便利店</span><span class="rank-hot">2.3万</span></li>
+            <li><span class="rank-num">2</span><span class="rank-title">第1季第11集 生日惊喜</span><span class="rank-hot">1.8万</span></li>
+            <li><span class="rank-num">3</span><span class="rank-title">第2季第5集 森林集市</span><span class="rank-hot">1.5万</span></li>
+            <li><span class="rank-num">4</span><span class="rank-title">第2季第11集 月光舞会</span><span class="rank-hot">1.2万</span></li>
+            <li><span class="rank-num">5</span><span class="rank-title">番外 甜心的厨房</span><span class="rank-hot">1.1万</span></li>
+          </ul>
+        </div>
+        <div class="aside-card">
+          <h3>最新条目</h3>
+          <ul class="rank-list">
+            <li><span class="rank-num">11-06</span><span class="rank-title">第2季第11集 月光舞会</span></li>
+            <li><span class="rank-num">11-03</span><span class="rank-title">厨房食谱彩蛋更新</span></li>
+            <li><span class="rank-num">11-01</span><span class="rank-title">月光舞会排练 前传</span></li>
+            <li><span class="rank-num">10-28</span><span class="rank-title">第10集 导演评论音轨</span></li>
+            <li><span class="rank-num">10-24</span><span class="rank-title">第9集 雨夜便利店</span></li>
+          </ul>
+        </div>
+        <div class="aside-card">
+          <h3>标签索引</h3>
+          <div class="tag-cloud" style="gap:6px;">
+            <a href="/#featured" class="tag-link" style="font-size:12px;padding:4px 10px;">单场景叙事</a>
+            <a href="/#deep-dive" class="tag-link" style="font-size:12px;padding:4px 10px;">声线调整</a>
+            <a href="/#updates" class="tag-link" style="font-size:12px;padding:4px 10px;">配色方案</a>
+            <a href="/#featured" class="tag-link" style="font-size:12px;padding:4px 10px;">番外短片</a>
+            <a href="/#comments" class="tag-link" style="font-size:12px;padding:4px 10px;">獾奶奶</a>
+            <a href="/#deep-dive" class="tag-link" style="font-size:12px;padding:4px 10px;">原画展</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fb-logo">甜心狐狸sweetie fox 在线播放</div>
+        <p class="fb-desc">收录2025年3月至2026年11月期间上线的正片24集、番外短片6部、配音花絮8条及角色设定摘录。每周三、周六更新条目索引，正片更新以官方播出为准。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>内容</h4>
+          <a href="/#featured">正片剧集</a>
+          <a href="/#featured">番外短片</a>
+          <a href="/#updates">配音花絮</a>
+          <a href="/#updates">角色设定集</a>
+        </div>
+        <div class="footer-col">
+          <h4>指南</h4>
+          <a href="/#guide">补番顺序</a>
+          <a href="/#deep-dive">单集评判</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#timeline">播出时间线</a>
+        </div>
+        <div class="footer-col">
+          <h4>互动</h4>
+          <a href="/#interact">二创投稿</a>
+          <a href="/#interact">角色投票</a>
+          <a href="/#comments">观众评论</a>
+          <a href="/#news">相关资讯</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 甜心狐狸sweetie fox 在线播放 · 内容聚合示例页</span>
+      <span>最后更新：2026-11-08 · 条目数据为示例内容，以官方实际播出为准</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<script>
+  (function() {
+    // 汉堡菜单
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mainNav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', function() {
+      const isOpen = mainNav.classList.toggle('mobile-open');
+      this.setAttribute('aria-expanded', isOpen);
+      this.textContent = isOpen ? '✕' : '☰';
+    });
+
+    // 点击导航项后关闭移动菜单
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('mobile-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.textContent = '☰';
+      });
+    });
+
+    // 搜索面板
+    const searchToggle = document.getElementById('searchToggle');
+    const searchPanel = document.getElementById('searchPanel');
+    const searchInput = document.getElementById('searchInput');
+    const searchFeedback = document.getElementById('searchFeedback');
+
+    searchToggle.addEventListener('click', function() {
+      const isActive = searchPanel.classList.toggle('active');
+      this.setAttribute('aria-expanded', isActive);
+      if (isActive) searchInput.focus();
+    });
+
+    // 本地搜索：搜索卡片、列表、FAQ、评论等可见文本
+    searchInput.addEventListener('input', function() {
+      const q = this.value.trim().toLowerCase();
+      if (!q) {
+        searchFeedback.textContent = '';
+        document.querySelectorAll('.content-card, .update-item, .faq-item, .comment-card, .news-item, .tag-link').forEach(el => {
+          el.style.display = '';
+        });
+        return;
+      }
+      let count = 0;
+      document.querySelectorAll('.content-card, .update-item, .faq-item, .comment-card, .news-item, .tag-link').forEach(el => {
+        const text = el.textContent.toLowerCase();
+        if (text.includes(q)) {
+          el.style.display = '';
+          count++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      searchFeedback.textContent = count > 0 ? `找到 ${count} 条相关内容` : '没有找到匹配内容，试试其他关键词';
+    });
+
+    // 回到顶部
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Esc 关闭搜索面板
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (searchPanel.classList.contains('active')) {
+          searchPanel.classList.remove('active');
+          searchToggle.setAttribute('aria-expanded', 'false');
+        }
+        if (mainNav.classList.contains('mobile-open')) {
+          mainNav.classList.remove('mobile-open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.textContent = '☰';
+        }
+      }
+    });
+  })();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "甜心狐狸sweetie fox 在线播放",
+  "url": "https://example.com/",
+  "description": "动画剧集、番外短片与配音花絮聚合页",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "甜心狐狸第2季有多少集？每集多长？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第2季共12集，2026年9月19日首播，10月24日完结。单集时长10—12分钟，第9集最长，11分18秒；第6集最短，9分44秒。正片之外另有3部第2季番外短片，每部4—6分钟。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第2季第9集「雨夜便利店」为什么被说“最安静”？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这一集11分钟里只有19句对白，场景全在便利店内部，没有转场。声音设计上放了5条环境音轨：雨声、冰柜嗡鸣、收银机扫描声、自动门提示音和远处车铃。甜心的台词少，表情作画张数却比第2季平均多出450张，靠动作和停顿推进情绪。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "番外短片《甜心的厨房》里的食谱是真的能做吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "短片结尾30秒出现的胡萝卜蛋糕配料表是完整的：低筋面粉120g、泡打粉3g、鸡蛋2个、胡萝卜丝150g、植物油80ml、细砂糖70g，烘烤温度180℃、35分钟。有美食博主按这个配方复刻过，反馈蛋糕体偏湿润，糖量比常规配方低约20g。官方没有说明配方是否经过厨房测试。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第1季和第2季的画风差别在哪里？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第2季从第5集开始降低背景饱和度约15%，阴影色从暖灰改为冷灰。角色线条粗细从第1季的2.5px降到2px，甜心耳朵绒毛的笔触变细。观众最直观的感受是“颜色没那么跳了”。设定集第三册标注了色号变化：甜心围裙从Pantone 1505C改为158C。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "配音花絮里提到的“尾音平收”是什么意思？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "指句尾音调不再上扬。第1季甜心说“獾奶奶，果酱不甜吗？”时“吗”字尾音往上挑，带撒娇感；第2季同一句台词把尾音压平，听感更平静。苏念在花絮里解释，这个调整从第2季第5集开始，配合角色“不再用撒娇掩盖不安”的设定。第7集「风筝线」里甜心追风筝的喊声完全没用假声。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "角色设定集第三册和前面两册有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第三册专注第2季服装拆解，收录甜心围裙、雨靴、领结的三视图和色号标注，共14张图。前两册以角色表情和场景设定为主，第三册新增了耳朵角度随情绪变化的对照表，比如雨中耳朵下垂-15°、生日时上翘+22°。对画同人图的人比较有用，纯看剧情可以跳过。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+                                                           </html>
