@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈圆圆尤蜜荟 - 古典人物影像资料聚合</title>
+<meta name="description" content="陈圆圆尤蜜荟汇聚历史人物陈圆圆相关影视剧照、戏曲扮相、仿妆作品与人物考据内容，整理明末秦淮名妓题材的影像条目、角色对比与创作投稿，供古典人物爱好者查阅。">
+<meta name="keywords" content="陈圆圆尤蜜荟">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b2d4f'/%3E%3Ccircle cx='32' cy='24' r='11' fill='%23f3d8c4'/%3E%3Cpath d='M12 58c0-13 9-21 20-21s20 8 20 21z' fill='%23e8b04b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --zhu:#6b2d4f;
+  --zhu-light:#8d4668;
+  --zhu-deep:#4a1c37;
+  --jin:#c98a2e;
+  --jin-light:#e8b04b;
+  --bg:#faf6f1;
+  --panel:#ffffff;
+  --panel-alt:#f4ece4;
+  --text:#2e2328;
+  --text-2:#5d4b53;
+  --text-3:#8b7880;
+  --line:#e3d6cb;
+  --radius-card:14px;
+  --radius-btn:8px;
+  --radius-tag:6px;
+  --radius-banner:18px;
+  --shadow:0 2px 10px rgba(74,28,55,.07);
+  --shadow-hover:0 8px 24px rgba(74,28,55,.16);
+  --announce-h:44px;
+  --header-h:64px;
+  --sticky-offset:112px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-padding-top:var(--sticky-offset);scroll-behavior:smooth}
+body{
+  font-family:"Noto Serif SC","Songti SC","STSong",Georgia,"Microsoft YaHei",serif;
+  background:var(--bg);color:var(--text);
+  font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+ul,ol{list-style:none}
+
+/* ============ 吸顶公告条 ============ */
+.announce{
+  position:sticky;top:0;z-index:60;
+  height:var(--announce-h);
+  background:linear-gradient(90deg,var(--zhu-deep),var(--zhu));
+  color:#f7e9dd;font-size:13.5px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.announce-inner{
+  max-width:1320px;margin:0 auto;padding:0 20px;
+  width:100%;display:flex;align-items:center;gap:14px;
+}
+.announce-brand{
+  font-weight:700;color:var(--jin-light);
+  letter-spacing:.5px;white-space:nowrap;
+}
+.announce-track{
+  flex:1;overflow:hidden;position:relative;height:22px;
+}
+.announce-item{
+  position:absolute;inset:0;
+  display:flex;align-items:center;gap:10px;
+  opacity:0;transform:translateY(100%);
+  transition:opacity .5s,transform .5s;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.announce-item.active{opacity:1;transform:translateY(0)}
+.announce-tag{
+  background:rgba(232,176,75,.22);color:var(--jin-light);
+  padding:0 8px;border-radius:4px;font-size:12px;line-height:20px;
+}
+.announce-date{color:#d7b8a8;font-size:12.5px}
+
+/* ============ 吸顶页头 ============ */
+.site-header{
+  position:sticky;top:var(--announce-h);z-index:55;
+  height:var(--header-h);
+  background:rgba(250,246,241,.92);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1320px;margin:0 auto;padding:0 20px;
+  height:100%;display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:38px;height:38px;flex-shrink:0}
+.logo-text{
+  font-size:20px;font-weight:700;color:var(--zhu);
+  letter-spacing:1px;white-space:nowrap;
+}
+.main-nav{display:flex;align-items:center;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  padding:7px 13px;font-size:14.5px;color:var(--text-2);
+  border-radius:var(--radius-btn);white-space:nowrap;
+  transition:background .2s,color .2s;
+}
+.main-nav a:hover,.main-nav a.active{background:var(--panel-alt);color:var(--zhu)}
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.search-box{
+  display:flex;align-items:center;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-btn);padding:0 4px 0 10px;
+  height:36px;transition:border-color .2s;
+}
+.search-box:focus-within{border-color:var(--zhu-light)}
+.search-box input{
+  border:0;background:transparent;outline:0;
+  font-family:inherit;font-size:13.5px;color:var(--text);
+  width:130px;
+}
+.search-box input::placeholder{color:var(--text-3)}
+.search-box button{
+  border:0;background:var(--zhu);color:#fff;
+  height:28px;padding:0 11px;border-radius:6px;font-size:13px;
+  transition:background .2s;
+}
+.search-box button:hover{background:var(--zhu-deep)}
+.hamburger{
+  display:none;border:1px solid var(--line);background:var(--panel);
+  width:38px;height:36px;border-radius:var(--radius-btn);
+  flex-direction:column;justify-content:center;align-items:center;gap:4px;
+}
+.hamburger span{display:block;width:18px;height:2px;background:var(--zhu);border-radius:1px}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(201,138,46,.16),transparent 46%),
+    radial-gradient(circle at 12% 78%,rgba(107,45,79,.14),transparent 50%),
+    linear-gradient(160deg,#f6ece2,#f1e2d6 60%,#f8f0e8);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:1320px;margin:0 auto;padding:56px 20px 60px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--zhu);letter-spacing:2px;
+  border:1px solid rgba(107,45,79,.28);
+  padding:4px 12px;border-radius:20px;background:rgba(255,255,255,.55);
+  margin-bottom:20px;
+}
+.hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--jin)}
+.hero h1{
+  font-size:clamp(38px,5vw,58px);
+  line-height:1.16;color:var(--zhu-deep);
+  letter-spacing:3px;font-weight:700;
+  margin-bottom:20px;
+}
+.hero-desc{
+  font-size:16.5px;color:var(--text-2);line-height:1.9;
+  max-width:560px;margin-bottom:26px;
+}
+.hero-desc strong{color:var(--zhu);font-weight:700}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.btn-primary,.btn-ghost{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:11px 24px;border-radius:var(--radius-btn);
+  font-size:15px;transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn-primary{background:var(--zhu);color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{background:var(--zhu-deep);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.btn-ghost{background:rgba(255,255,255,.75);color:var(--zhu);border:1px solid rgba(107,45,79,.3)}
+.btn-ghost:hover{background:#fff;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+.hero-stat b{font-size:23px;color:var(--zhu-deep);font-family:Georgia,serif;display:block;line-height:1.3}
+.hero-stat span{font-size:12.5px;color:var(--text-3);letter-spacing:.5px}
+
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-fan{
+  width:100%;max-width:400px;aspect-ratio:1/1;
+  filter:drop-shadow(0 14px 32px rgba(74,28,55,.18));
+}
+.fan-ring{transform-origin:200px 200px;animation:slowspin 60s linear infinite}
+@keyframes slowspin{to{transform:rotate(360deg)}}
+
+.hero-figure{
+  position:absolute;bottom:6%;right:-4%;
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:var(--radius-card);
+  padding:11px 15px;box-shadow:var(--shadow);
+  font-size:13px;color:var(--text-2);line-height:1.6;
+}
+.hero-figure b{color:var(--zhu);display:block;font-size:14px}
+
+/* ============ 主布局 ============ */
+.layout{
+  max-width:1320px;margin:0 auto;padding:0 20px;
+  display:grid;grid-template-columns:184px minmax(0,1fr) 248px;
+  gap:26px;align-items:start;
+  padding-top:34px;padding-bottom:56px;
+}
+
+/* 左侧频道索引 */
+.channel-rail{
+  position:sticky;top:var(--sticky-offset);
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:16px 12px;
+  box-shadow:var(--shadow);
+}
+.channel-rail h2{
+  font-size:14px;color:var(--text-3);letter-spacing:2px;
+  font-weight:600;padding:0 8px 10px;border-bottom:1px solid var(--line);
+  margin-bottom:8px;
+}
+.channel-rail a{
+  display:block;padding:7px 10px;font-size:14px;color:var(--text-2);
+  border-radius:6px;transition:background .18s,color .18s;
+  line-height:1.5;
+}
+.channel-rail a:hover,.channel-rail a.current{background:var(--panel-alt);color:var(--zhu);font-weight:600}
+.channel-rail a small{display:block;font-size:11.5px;color:var(--text-3);font-weight:400;letter-spacing:.3px}
+
+/* 右侧辅助栏 */
+.side-rail{display:flex;flex-direction:column;gap:20px;position:sticky;top:var(--sticky-offset)}
+.side-card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:16px;box-shadow:var(--shadow);
+}
+.side-card h3{
+  font-size:14.5px;color:var(--zhu);margin-bottom:12px;
+  padding-bottom:9px;border-bottom:1px solid var(--line);letter-spacing:1px;
+}
+.rank-list li{display:flex;gap:9px;padding:7px 0;font-size:13.5px;line-height:1.55;align-items:flex-start}
+.rank-list li+li{border-top:1px dashed var(--line)}
+.rank-num{
+  flex-shrink:0;width:19px;height:19px;border-radius:5px;
+  background:var(--panel-alt);color:var(--text-3);
+  font-size:11.5px;display:flex;align-items:center;justify-content:center;
+  font-family:Georgia,serif;font-weight:700;margin-top:2px;
+}
+.rank-list li:nth-child(-n+3) .rank-num{background:var(--zhu);color:#fff}
+.rank-list a:hover{color:var(--zhu)}
+.rank-meta{display:block;font-size:11.5px;color:var(--text-3);margin-top:1px}
+
+.update-flow li{padding:8px 0;font-size:13.5px;line-height:1.6}
+.update-flow li+li{border-top:1px dashed var(--line)}
+.update-flow time{display:block;font-size:11.5px;color:var(--jin);font-family:Georgia,serif;letter-spacing:.5px}
+.update-flow a:hover{color:var(--zhu)}
+
+.side-tags{display:flex;flex-wrap:wrap;gap:7px}
+.side-tags a{
+  font-size:12.5px;padding:4px 9px;border-radius:var(--radius-tag);
+  background:var(--panel-alt);color:var(--text-2);transition:background .18s,color .18s;
+}
+.side-tags a:hover{background:var(--zhu);color:#fff}
+
+/* ============ 主内容区 ============ */
+.main-col{display:flex;flex-direction:column;gap:46px;min-width:0}
+.section{scroll-margin-top:var(--sticky-offset)}
+.section-head{margin-bottom:19px}
+.section-head h2{
+  font-size:23px;color:var(--zhu-deep);letter-spacing:1.5px;
+  display:flex;align-items:center;gap:11px;line-height:1.4;
+}
+.section-head h2::before{
+  content:"";width:5px;height:22px;border-radius:3px;
+  background:linear-gradient(180deg,var(--jin),var(--zhu));flex-shrink:0;
+}
+.section-head p{font-size:13.5px;color:var(--text-3);margin-top:6px;padding-left:16px}
+
+/* 概览 */
+.overview-text{font-size:15.5px;line-height:1.95;color:var(--text-2)}
+.overview-text p{margin-bottom:14px}
+.overview-text p:last-child{margin-bottom:0}
+.overview-text em{font-style:normal;color:var(--zhu);font-weight:700}
+.overview-quote{
+  border-left:3px solid var(--jin);background:var(--panel-alt);
+  padding:13px 18px;border-radius:0 var(--radius-tag) var(--radius-tag) 0;
+  font-size:14.5px;color:var(--text-2);margin-top:16px;line-height:1.85;
+}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:18px}
+.content-card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);overflow:hidden;
+  box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform .22s,box-shadow .22s;
+}
+.content-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.card-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--panel-alt)}
+.card-thumb img{width:100%;height:100%;transition:transform .4s}
+.content-card:hover .card-thumb img{transform:scale(1.04)}
+.card-badge{
+  position:absolute;top:9px;left:9px;
+  background:rgba(74,28,55,.86);color:#f7e9dd;
+  font-size:11.5px;padding:2px 9px;border-radius:5px;letter-spacing:.5px;
+}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{font-size:15.5px;color:var(--zhu-deep);line-height:1.5;font-weight:700}
+.card-body h3 a:hover{color:var(--zhu)}
+.card-desc{font-size:13px;color:var(--text-2);line-height:1.68;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px}
+.card-tags span{
+  font-size:11.5px;padding:2px 7px;border-radius:4px;
+  background:var(--panel-alt);color:var(--text-3);
+}
+.card-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--text-3);padding-top:9px;border-top:1px dashed var(--line);
+}
+.card-foot .hot{color:var(--jin);font-family:Georgia,serif;font-weight:700}
+
+/* 最新更新列表 */
+.update-list{border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;background:var(--panel)}
+.update-row{
+  display:flex;gap:16px;padding:14px 18px;align-items:flex-start;
+  transition:background .18s;
+}
+.update-row+.update-row{border-top:1px solid var(--line)}
+.update-row:hover{background:var(--panel-alt)}
+.update-date{
+  flex-shrink:0;width:66px;font-family:Georgia,serif;
+  color:var(--jin);font-size:13px;font-weight:700;letter-spacing:.5px;
+  padding-top:2px;
+}
+.update-main{flex:1;min-width:0}
+.update-main h3{font-size:15px;color:var(--zhu-deep);margin-bottom:3px;font-weight:700}
+.update-main h3 a:hover{color:var(--zhu)}
+.update-main p{font-size:13.5px;color:var(--text-2);line-height:1.7}
+.update-type{
+  flex-shrink:0;font-size:11.5px;padding:2px 9px;border-radius:5px;
+  background:var(--panel-alt);color:var(--zhu);align-self:flex-start;
+}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:13px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:14px 15px;
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.cat-item:hover{border-color:var(--zhu-light);background:var(--panel-alt);transform:translateY(-2px)}
+.cat-item h3{font-size:15px;color:var(--zhu-deep);margin-bottom:5px;font-weight:700}
+.cat-item p{font-size:12.5px;color:var(--text-3);line-height:1.6}
+.cat-item b{font-size:11.5px;color:var(--jin);font-family:Georgia,serif;font-weight:700;display:block;margin-top:7px}
+
+/* 深度解析 */
+.article-body{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:28px 30px;box-shadow:var(--shadow);
+}
+.article-body h3{
+  font-size:18.5px;color:var(--zhu);margin:24px 0 11px;
+  letter-spacing:.8px;line-height:1.5;
+}
+.article-body h3:first-child{margin-top:0}
+.article-body p{font-size:15px;line-height:1.95;color:var(--text-2);margin-bottom:13px}
+.article-body ul{margin:0 0 14px 0;padding-left:0}
+.article-body ul li{
+  font-size:14.5px;line-height:1.85;color:var(--text-2);
+  padding-left:18px;position:relative;margin-bottom:7px;
+}
+.article-body ul li::before{
+  content:"";position:absolute;left:2px;top:11px;
+  width:5px;height:5px;border-radius:50%;background:var(--jin);
+}
+.article-body .hl{color:var(--zhu);font-weight:700}
+.compare-table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:9px 11px;text-align:left;line-height:1.65}
+.compare-table th{background:var(--panel-alt);color:var(--zhu);font-weight:700;white-space:nowrap}
+.compare-table td{color:var(--text-2)}
+.compare-table tr:nth-child(even) td{background:#fdfaf6}
+.layer-box{
+  background:var(--panel-alt);border-radius:var(--radius-tag);
+  padding:14px 18px;margin:14px 0;font-size:14px;line-height:1.85;color:var(--text-2);
+}
+.layer-box b{color:var(--zhu)}
+
+/* 指南步骤 */
+.guide-steps{counter-reset:step;display:flex;flex-direction:column;gap:14px}
+.guide-step{
+  display:flex;gap:16px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:17px 19px;box-shadow:var(--shadow);
+}
+.step-num{
+  counter-increment:step;flex-shrink:0;
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(140deg,var(--zhu),var(--zhu-light));color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:Georgia,serif;font-size:16px;font-weight:700;
+}
+.step-num::before{content:counter(step,decimal-leading-zero)}
+.step-body h3{font-size:15.5px;color:var(--zhu-deep);margin-bottom:5px;font-weight:700}
+.step-body p{font-size:14px;color:var(--text-2);line-height:1.8}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-list details{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);overflow:hidden;
+  transition:border-color .2s;
+}
+.faq-list details[open]{border-color:var(--zhu-light)}
+.faq-list summary{
+  padding:14px 18px;font-size:15px;color:var(--zhu-deep);
+  cursor:pointer;font-weight:700;line-height:1.55;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  list-style:none;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:"+";flex-shrink:0;font-size:20px;color:var(--jin);
+  font-family:Georgia,serif;font-weight:400;line-height:1;
+  transition:transform .2s;
+}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list summary:focus-visible{outline:2px solid var(--zhu-light);outline-offset:-2px}
+.faq-answer{padding:0 18px 16px;font-size:14px;line-height:1.9;color:var(--text-2)}
+.faq-answer p{margin-bottom:8px}
+.faq-answer p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:13px}
+.comment-card{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:14px 15px;
+  display:flex;flex-direction:column;gap:7px;
+}
+.comment-head{display:flex;align-items:center;gap:9px}
+.avatar{
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#fff;font-family:Georgia,serif;
+}
+.comment-name{font-size:13.5px;color:var(--zhu);font-weight:700}
+.comment-time{font-size:11.5px;color:var(--text-3);margin-left:auto;flex-shrink:0}
+.comment-text{font-size:13.5px;color:var(--text-2);line-height:1.75}
+.comment-text q{color:var(--zhu);font-style:normal}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:13px}
+.news-item{
+  display:flex;gap:16px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:14px 17px;transition:border-color .2s,box-shadow .2s;
+}
+.news-item:hover{border-color:var(--zhu-light);box-shadow:var(--shadow)}
+.news-date{
+  flex-shrink:0;width:74px;text-align:center;
+  border-right:1px solid var(--line);padding-right:14px;
+}
+.news-date b{display:block;font-size:20px;color:var(--zhu);font-family:Georgia,serif;line-height:1.2}
+.news-date span{font-size:11.5px;color:var(--text-3);letter-spacing:.5px}
+.news-main h3{font-size:15.5px;color:var(--zhu-deep);margin-bottom:5px;line-height:1.5;font-weight:700}
+.news-main h3 a:hover{color:var(--zhu)}
+.news-main p{font-size:13.5px;color:var(--text-2);line-height:1.72}
+
+/* 推荐标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{
+  font-size:13.5px;padding:7px 14px;border-radius:20px;
+  background:var(--panel);border:1px solid var(--line);color:var(--text-2);
+  transition:all .2s;
+}
+.rec-tags a:hover{background:var(--zhu);color:#fff;border-color:var(--zhu);transform:translateY(-2px)}
+
+/* 投稿板块 */
+.submit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.submit-card{
+  background:linear-gradient(150deg,#fff,#faf3ec);
+  border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:18px 19px;box-shadow:var(--shadow);
+}
+.submit-card h3{font-size:16px;color:var(--zhu);margin-bottom:7px;font-weight:700;display:flex;align-items:center;gap:7px}
+.submit-card h3 svg{width:17px;height:17px;flex-shrink:0}
+.submit-card p{font-size:13.5px;color:var(--text-2);line-height:1.75;margin-bottom:10px}
+.submit-card .req{font-size:12.5px;color:var(--text-3);line-height:1.7;padding-top:9px;border-top:1px dashed var(--line)}
+.submit-card .req b{color:var(--jin)}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{
+  content:"";position:absolute;left:6px;top:6px;bottom:6px;
+  width:2px;background:linear-gradient(180deg,var(--jin),var(--line));
+}
+.timeline-item{position:relative;padding-bottom:17px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{
+  content:"";position:absolute;left:-23px;top:5px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--panel);border:2.5px solid var(--zhu);
+}
+.timeline-item time{font-size:12.5px;color:var(--jin);font-family:Georgia,serif;font-weight:700;letter-spacing:.5px}
+.timeline-item h3{font-size:14.5px;color:var(--zhu-deep);margin:2px 0 3px;font-weight:700}
+.timeline-item p{font-size:13px;color:var(--text-2);line-height:1.7}
+
+/* 搜索无结果 */
+.no-result{
+  display:none;padding:22px;text-align:center;
+  color:var(--text-3);font-size:14px;background:var(--panel);
+  border:1px dashed var(--line);border-radius:var(--radius-card);
+}
+.no-result.show{display:block}
+.search-hidden{display:none !important}
+
+/* 页尾 */
+.site-footer{
+  background:linear-gradient(170deg,#3d1729,#2a0f1d);
+  color:#d8c3b5;margin-top:20px;
+}
+.footer-inner{max-width:1320px;margin:0 auto;padding:44px 20px 26px}
+.footer-top{display:grid;grid-template-columns:1.3fr 2fr;gap:40px;padding-bottom:28px;border-bottom:1px solid rgba(216,195,181,.16)}
+.footer-brand .logo-text{color:var(--jin-light);font-size:21px;display:block;margin-bottom:10px}
+.footer-brand p{font-size:13.5px;line-height:1.85;color:#b89f90;max-width:340px}
+.footer-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.footer-groups h4{font-size:14px;color:var(--jin-light);margin-bottom:11px;letter-spacing:1px}
+.footer-groups a{display:block;font-size:13px;color:#b89f90;padding:3px 0;transition:color .18s}
+.footer-groups a:hover{color:var(--jin-light)}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#8f7566;line-height:1.8}
+.footer-bottom a:hover{color:var(--jin-light)}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:22px;bottom:26px;z-index:50;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--zhu);color:#fff;border:0;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-hover);
+  opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .25s,visibility .25s,transform .25s,background .2s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--zhu-deep)}
+.to-top:focus-visible{outline:2px solid var(--jin);outline-offset:2px}
+
+/* 移动端遮罩 */
+.overlay{
+  display:none;position:fixed;inset:0;z-index:65;
+  background:rgba(42,15,29,.5);backdrop-filter:blur(2px);
+}
+.overlay.show{display:block}
+
+/* ============ 响应式 ============ */
+@media(max-width:1080px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px}
+  .channel-rail{display:none}
+}
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;padding:42px 20px 46px}
+  .hero-visual{order:-1;max-width:340px;margin:0 auto}
+  .hero-figure{right:0;bottom:-4%}
+}
+@media(max-width:900px){
+  .main-nav{
+    display:none;position:fixed;top:calc(var(--announce-h) + var(--header-h));
+    left:0;right:0;z-index:58;
+    flex-direction:column;align-items:stretch;gap:2px;
+    background:var(--panel);border-bottom:1px solid var(--line);
+    padding:10px 16px 16px;max-height:calc(100vh - 120px);overflow-y:auto;
+    box-shadow:var(--shadow-hover);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:11px 12px;font-size:15px;border-radius:7px}
+  .hamburger{display:flex}
+  .search-box input{width:110px}
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:34px}
+  .side-rail{position:static}
+  .article-body{padding:22px 19px}
+}
+@media(max-width:740px){
+  body{font-size:15px}
+  .announce{font-size:12.5px;height:42px}
+  :root{--announce-h:42px;--header-h:58px;--sticky-offset:100px}
+  .logo-text{font-size:17.5px;letter-spacing:.5px}
+  .search-box{display:none}
+  .hero-inner{padding:34px 16px 38px}
+  .hero h1{letter-spacing:2px}
+  .hero-desc{font-size:15px}
+  .hero-stats{gap:22px}
+  .hero-figure{position:static;margin-top:16px;text-align:center}
+  .layout{padding:26px 15px 44px;gap:38px}
+  .main-col{gap:40px}
+  .section-head h2{font-size:20px}
+  .article-body h3{font-size:17px}
+  .update-row{flex-wrap:wrap;gap:8px 12px;padding:13px 14px}
+  .update-date{width:auto}
+  .update-type{order:3}
+  .news-item{flex-direction:column;gap:8px;padding:13px 15px}
+  .news-date{width:auto;text-align:left;border-right:0;border-bottom:1px solid var(--line);padding:0 0 7px;display:flex;align-items:baseline;gap:8px}
+  .news-date b{font-size:16px}
+  .footer-top{grid-template-columns:1fr;gap:26px}
+  .footer-groups{grid-template-columns:repeat(2,1fr);gap:18px}
+  .comment-grid{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+  .to-top{right:14px;bottom:16px;width:40px;height:40px}
+  .compare-table{display:block;overflow-x:auto;white-space:nowrap}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce" role="region" aria-label="站内更新公告">
+  <div class="announce-inner">
+    <span class="announce-brand">陈圆圆尤蜜荟</span>
+    <div class="announce-track" id="announceTrack">
+      <div class="announce-item active">
+        <span class="announce-date">11月07日</span>
+        <span class="announce-tag">新增</span>
+        <span>《秦淮旧影》2026修复版剧照 42 张录入“影视图录”</span>
+      </div>
+      <div class="announce-item">
+        <span class="announce-date">11月06日</span>
+        <span class="announce-tag">投稿</span>
+        <span>昆曲《圆圆曲》折子戏仿妆作品 17 组通过审核</span>
+      </div>
+      <div class="announce-item">
+        <span class="announce-date">11月05日</span>
+        <span class="announce-tag">条目</span>
+        <span>“冲冠一怒”人物考据条目更新，补入 3 份地方志引文</span>
+      </div>
+      <div class="announce-item">
+        <span class="announce-date">11月03日</span>
+        <span class="announce-tag">榜单</span>
+        <span>十月仿妆人气榜发布，前 10 名中戏曲扮相占 6 席</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/#top" aria-label="陈圆圆尤蜜荟首页">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#6b2d4f"/>
+        <circle cx="32" cy="23" r="10.5" fill="#f3d8c4"/>
+        <path d="M13 57c0-12 8.5-20 19-20s19 8 19 20z" fill="#e8b04b"/>
+        <circle cx="32" cy="23" r="10.5" fill="none" stroke="#c98a2e" stroke-width="1.4"/>
+        <path d="M32 5v6M32 35v5" stroke="#f3d8c4" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">陈圆圆尤蜜荟</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主题频道导航">
+      <a href="/#overview" class="active">领域概览</a>
+      <a href="/#featured">精选图录</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deepdive">深度解析</a>
+      <a href="/#guide">观赏指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">观众短评</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#submit">投稿交流</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="search" id="siteSearch" placeholder="搜索条目 / 扮相 / 剧目" aria-label="站内搜索">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">古典人物 · 影像档案</span>
+      <h1>陈圆圆尤蜜荟</h1>
+      <p class="hero-desc">
+        从明末秦淮名妓到“冲冠一怒”的叙事符号，陈圆圆的形象散落在影视剧、昆曲舞台、地方志与当代仿妆里。这里把<strong>剧照、扮相、仿妆作品、人物考据</strong>归到一处：收录 2026 年 11 月前可查的影像条目 210 余组，按剧目、年代、扮相流派分栏，供研究、二创与扮装参考。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#featured">查阅精选图录</a>
+        <a class="btn-ghost" href="/#submit">提交仿妆作品</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>214</b><span>影像条目</span></div>
+        <div class="hero-stat"><b>9</b><span>分类频道</span></div>
+        <div class="hero-stat"><b>11·07</b><span>最近录入</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-fan" viewBox="0 0 400 400" role="img" aria-label="陈圆圆主题团扇装饰图形">
+        <defs>
+          <radialGradient id="fanGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fdf7ef"/>
+            <stop offset="70%" stop-color="#f4e6d8"/>
+            <stop offset="100%" stop-color="#ecd7c4"/>
+          </radialGradient>
+          <linearGradient id="petalGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8d4668"/>
+            <stop offset="100%" stop-color="#4a1c37"/>
+          </linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="178" fill="url(#fanGrad)" stroke="#c98a2e" stroke-width="2"/>
+        <circle cx="200" cy="200" r="158" fill="none" stroke="#d9bfa8" stroke-width="1" stroke-dasharray="4 7"/>
+        <g class="fan-ring" opacity=".92">
+          <circle cx="200" cy="200" r="132" fill="none" stroke="#c98a2e" stroke-width="1.2" stroke-dasharray="2 6"/>
+          <g fill="url(#petalGrad)" opacity=".8">
+            <ellipse cx="200" cy="66" rx="13" ry="26"/>
+            <ellipse cx="200" cy="334" rx="13" ry="26"/>
+            <ellipse cx="66" cy="200" rx="26" ry="13"/>
+            <ellipse cx="334" cy="200" rx="26" ry="13"/>
+            <ellipse cx="105" cy="105" rx="11" ry="22" transform="rotate(-45 105 105)"/>
+            <ellipse cx="295" cy="295" rx="11" ry="22" transform="rotate(-45 295 295)"/>
+            <ellipse cx="295" cy="105" rx="11" ry="22" transform="rotate(45 295 105)"/>
+            <ellipse cx="105" cy="295" rx="11" ry="22" transform="rotate(45 105 295)"/>
+          </g>
+        </g>
+        <circle cx="200" cy="200" r="92" fill="#f9f0e6" stroke="#e3d6cb" stroke-width="1"/>
+        <path d="M200 130c26 22 38 46 38 70s-12 48-38 70c-26-22-38-46-38-70s12-48 38-70z" fill="#6b2d4f" opacity=".12"/>
+        <path d="M200 142c18 18 27 38 27 58s-9 40-27 58c-18-18-27-38-27-58s9-40 27-58z" fill="none" stroke="#6b2d4f" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="7" fill="#c98a2e"/>
+        <path d="M200 207v42" stroke="#c98a2e" stroke-width="2" stroke-linecap="round"/>
+        <path d="M172 249h56" stroke="#c98a2e" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="hero-figure">
+        <b>本季焦点</b>
+        昆曲《圆圆曲》折子戏复原扮相
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 主布局：三栏门户 -->
+<div class="layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-rail" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <a href="/#overview" class="current">人物概览<small>生平与争议</small></a>
+    <a href="/#featured">影视图录<small>剧照与角色</small></a>
+    <a href="/#updates">最新录入<small>近 30 天更新</small></a>
+    <a href="/#categories">分类索引<small>按类型检索</small></a>
+    <a href="/#deepdive">深度解析<small>叙事与考据</small></a>
+    <a href="/#guide">观赏指南<small>比较与取舍</small></a>
+    <a href="/#faq">常见问答<small>史实与演绎</small></a>
+    <a href="/#comments">观众短评<small>真实观感</small></a>
+    <a href="/#news">相关资讯<small>近期动态</small></a>
+    <a href="/#timeline">人物时间线<small>关键节点</small></a>
+    <a href="/#submit">投稿交流<small>作品与互动</small></a>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main-col" id="mainContent">
+
+    <!-- 1 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>明末名妓形象的多重面孔</h2>
+        <p>从史料、戏曲到影视与仿妆，陈圆圆题材的几条主要脉络</p>
+      </div>
+      <div class="overview-text">
+        <p>
+          陈圆圆在史料里留下的直接记录并不多，<em>《明史·流贼传》</em>只用了“吴三桂闻其美，欲得之”一句带过；真正把她推到台前的是吴伟业那首<em>《圆圆曲》</em>——“冲冠一怒为红颜”七个字，把王朝更替的因果压在一个女子身上，也把后来四百年的想象定了调。围绕这个题材，可查的内容大致分四支。
+        </p>
+        <p>
+          一支是<em>影视剧照与角色演绎</em>：1980 年代以来的电视剧、电影里，陈圆圆被反复重写，从《鹿鼎记》里的配角到独立人物传记片，扮相从明末秦淮的素雅一路演到清宫旗装。另一支是<em>昆曲与地方戏舞台</em>：昆曲《圆圆曲》、京剧《陈圆圆》、滇剧《吴三桂与陈圆圆》各有版本，唱腔和身段差别不小，舞台扮相是最接近晚明审美的参照。
+        </p>
+        <p>
+          第三支是<em>当代仿妆与汉服复原</em>：2023 年以后，明制袄裙、马面裙的复原穿戴在社交平台形成稳定创作群，陈圆圆题材因为“秦淮名妓”的身份标签，常被拿来做晚明妆造的示范对象。第四支是<em>人物考据</em>：籍贯苏州还是常州、生卒年、入滇后的结局，学界说法并不统一，地方志与族谱的引文是判断依据。
+        </p>
+        <div class="overview-quote">
+          一个可以核对的细节：现存明确署名的陈圆圆画像极少，多数“陈圆圆像”是清代以后绘制的想象图，来源标注往往缺失。看任何一组所谓“历史原貌”时，先找它的绘制年代和收藏出处。
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>精选图录与扮相条目</h2>
+        <p>按剧目、年代与扮相流派挑出的 8 组条目</p>
+      </div>
+      <div class="card-grid">
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-film01/400/300" width="400" height="300" loading="lazy" alt="《秦淮旧影》修复版中陈圆圆夜宴场景剧照">
+            <span class="card-badge">影视图录</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">《秦淮旧影》2026 修复版剧照</a></h3>
+            <p class="card-desc">胶片扫描后调色，夜宴一场的烛光层次比旧版清楚，服饰纹样可辨出缠枝莲暗纹，适合做晚明女装复原参照。</p>
+            <div class="card-tags"><span>修复版</span><span>晚明服饰</span><span>夜宴场景</span></div>
+            <div class="card-foot"><span class="hot">热度 9.4</span><span>11-07 录入</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-kunqu02/400/300" width="400" height="300" loading="lazy" alt="昆曲《圆圆曲》折子戏舞台扮相，水袖与点翠头面">
+            <span class="card-badge">戏曲舞台</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">昆曲《圆圆曲》折子戏扮相</a></h3>
+            <p class="card-desc">闺门旦应工，头面用点翠加少量绒花，区别于京剧的华丽贴片。身段上“圆场”走得慢，是这版最受讨论的地方。</p>
+            <div class="card-tags"><span>闺门旦</span><span>点翠头面</span><span>水袖</span></div>
+            <div class="card-foot"><span class="hot">热度 9.1</span><span>11-06 录入</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-makeup03/400/300" width="400" height="300" loading="lazy" alt="明制袄裙仿妆作品，淡赭眼妆与低盘发">
+            <span class="card-badge">仿妆作品</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">“秦淮夜泊”明制仿妆组图</a></h3>
+            <p class="card-desc">投稿者用淡赭色眼影压低饱和，眉形取柳叶的短弧，发髻不做高耸，整体靠近晚明仕女图的清淡路子。</p>
+            <div class="card-tags"><span>明制袄裙</span><span>柳叶眉</span><span>低盘发</span></div>
+            <div class="card-foot"><span class="hot">热度 8.8</span><span>11-06 审核</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-tv04/400/300" width="400" height="300" loading="lazy" alt="1998 年电视剧陈圆圆角色定妆照，旗装造型">
+            <span class="card-badge">角色对比</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">1998 版电视剧旗装造型</a></h3>
+            <p class="card-desc">入滇之后的戏份改穿旗装，领口与袖型按清初形制处理，与前半段秦淮戏的明制襦裙形成明显断代。</p>
+            <div class="card-tags"><span>旗装</span><span>清初形制</span><span>定妆照</span></div>
+            <div class="card-foot"><span class="hot">热度 8.5</span><span>11-04 录入</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-dianju05/400/300" width="400" height="300" loading="lazy" alt="滇剧《吴三桂与陈圆圆》舞台照，云南地方戏扮相">
+            <span class="card-badge">地方戏</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">滇剧《吴三桂与陈圆圆》</a></h3>
+            <p class="card-desc">云南本地院团保留剧目，唱腔用丝弦腔，扮相掺了滇剧自己的头饰习惯，和江南昆曲版本放在一起看差异很直观。</p>
+            <div class="card-tags"><span>丝弦腔</span><span>云南院团</span><span>地方戏</span></div>
+            <div class="card-foot"><span class="hot">热度 8.2</span><span>11-02 录入</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-doc06/400/300" width="400" height="300" loading="lazy" alt="人物考据文献页，含《圆圆曲》手抄本影印">
+            <span class="card-badge">人物考据</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">《圆圆曲》手抄本影印对照</a></h3>
+            <p class="card-desc">三个传抄本并排，异文集中在“冲冠一怒”前后两句。用词差异会影响对吴三桂动机的解读，做引文时要注意版本。</p>
+            <div class="card-tags"><span>吴伟业</span><span>异文</span><span>传抄本</span></div>
+            <div class="card-foot"><span class="hot">热度 8.0</span><span>11-01 录入</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-dress07/400/300" width="400" height="300" loading="lazy" alt="明制马面裙复原实物，藕荷色织金裙门">
+            <span class="card-badge">服饰复原</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">藕荷色织金马面裙复原</a></h3>
+            <p class="card-desc">裙门织金缠枝纹，腰头用素缎。复原依据是南京出土的晚明织物残片，配色偏冷，和影视剧常见的大红有区别。</p>
+            <div class="card-tags"><span>马面裙</span><span>织金</span><span>晚明织物</span></div>
+            <div class="card-foot"><span class="hot">热度 7.9</span><span>10-30 录入</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/cyy-paint08/400/300" width="400" height="300" loading="lazy" alt="清代佚名仕女图，常被误标为陈圆圆像">
+            <span class="card-badge">图像辨伪</span>
+          </div>
+          <div class="card-body">
+            <h3><a href="/#featured">清代佚名仕女图辨伪条目</a></h3>
+            <p class="card-desc">这组图在多个平台被标成“陈圆圆真容”，实际题跋无署名，服饰是清中期样式，与明末不符，条目里列了三条判断线索。</p>
+            <div class="card-tags"><span>佚名画</span><span>题跋</span><span>服饰断代</span></div>
+            <div class="card-foot"><span class="hot">热度 7.7</span><span>10-29 录入</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head">
+        <h2>近三十天录入动态</h2>
+        <p>新条目、修订记录与审核通过的投稿</p>
+      </div>
+      <div class="update-list">
+        <div class="update-row">
+          <div class="update-date">11-07</div>
+          <div class="update-main">
+            <h3><a href="/#featured">《秦淮旧影》修复版补入 42 张剧照</a></h3>
+            <p>修复团队公布的扫描件里，夜宴场景的烛光细节比 2019 年流出的版本多出一层，服饰纹样可辨。</p>
+          </div>
+          <span class="update-type">图录</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">11-06</div>
+          <div class="update-main">
+            <h3><a href="/#featured">昆曲《圆圆曲》折子戏仿妆 17 组过审</a></h3>
+            <p>这批投稿集中在点翠头面的替代做法，用染色鹅毛代替翠羽，成本降下来，远看效果接近。</p>
+          </div>
+          <span class="update-type">投稿</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">11-05</div>
+          <div class="update-main">
+            <h3><a href="/#deepdive">“冲冠一怒”考据条目补入地方志引文</a></h3>
+            <p>新增《苏州府志》与《武进县志》两条转引，籍贯争议的材料比原来完整，条目里做了来源分层标注。</p>
+          </div>
+          <span class="update-type">考据</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">11-04</div>
+          <div class="update-main">
+            <h3><a href="/#featured">1998 版电视剧旗装造型条目修订</a></h3>
+            <p>更正了领口形制的描述，原条目把清初的圆领误写成立领，依据是定妆照的侧拍角度。</p>
+          </div>
+          <span class="update-type">修订</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">11-03</div>
+          <div class="update-main">
+            <h3><a href="/#comments">十月仿妆人气榜发布</a></h3>
+            <p>前 10 名里戏曲扮相占 6 席，明制日常向的仿妆排位下滑，投稿量比九月少了 11 组。</p>
+          </div>
+          <span class="update-type">榜单</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">11-02</div>
+          <div class="update-main">
+            <h3><a href="/#featured">滇剧《吴三桂与陈圆圆》舞台照录入</a></h3>
+            <p>云南省滇剧院 10 月复排场次的剧照，丝弦腔段落的身段与江南版本差别明显。</p>
+          </div>
+          <span class="update-type">图录</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">10-31</div>
+          <div class="update-main">
+            <h3><a href="/#featured">藕荷色织金马面裙复原条目上线</a></h3>
+            <p>复原依据为南京出土晚明织物残片，裙门纹样与常见影视道具的差别列了对照表。</p>
+          </div>
+          <span class="update-type">服饰</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">10-29</div>
+          <div class="update-main">
+            <h3><a href="/#featured">清代佚名仕女图辨伪条目增补</a></h3>
+            <p>补入题跋的钤印信息，三条断代线索里有一条需要修正，服饰样式的年代区间收窄了。</p>
+          </div>
+          <span class="update-type">辨伪</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">10-26</div>
+          <div class="update-main">
+            <h3><a href="/#guide">观赏指南新增“版本比较”小节</a></h3>
+            <p>把昆曲、京剧、滇剧三个版本的唱段时长和身段要点列成对照，方便按目的选看。</p>
+          </div>
+          <span class="update-type">指南</span>
+        </div>
+        <div class="update-row">
+          <div class="update-date">10-22</div>
+          <div class="update-main">
+            <h3><a href="/#news">《圆圆曲》学术校注本出版消息</a></h3>
+            <p>校注者在前言里说明异文取舍原则，涉及“冲冠一怒”一句的三种读法。</p>
+          </div>
+          <span class="update-type">资讯</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>按类型检索的九个入口</h2>
+        <p>每个入口对应一类可检索的具体条目</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#featured">
+          <h3>影视剧照</h3>
+          <p>电视剧、电影中的角色定妆与场景照</p>
+          <b>68 条</b>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <h3>戏曲扮相</h3>
+          <p>昆曲、京剧、滇剧的舞台造型</p>
+          <b>41 条</b>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <h3>仿妆作品</h3>
+          <p>投稿审核通过的当代妆造组图</p>
+          <b>36 组</b>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <h3>服饰复原</h3>
+          <p>明制袄裙、马面裙的实物与考据</p>
+          <b>22 条</b>
+        </a>
+        <a class="cat-item" href="/#deepdive">
+          <h3>人物考据</h3>
+          <p>籍贯、生卒、结局的文献梳理</p>
+          <b>19 条</b>
+        </a>
+        <a class="cat-item" href="/#featured">
+          <h3>图像辨伪</h3>
+          <p>被误标的画像与来源核查</p>
+          <b>11 条</b>
+        </a>
+        <a class="cat-item" href="/#guide">
+          <h3>版本比较</h3>
+          <p>不同剧目、不同年代版本的差异</p>
+          <b>9 条</b>
+        </a>
+        <a class="cat-item" href="/#timeline">
+          <h3>人物时间线</h3>
+          <p>从崇祯初到入滇后的关键节点</p>
+          <b>7 段</b>
+        </a>
+        <a class="cat-item" href="/#submit">
+          <h3>投稿交流</h3>
+          <p>仿妆、考据、观后感的提交入口</p>
+          <b>开放中</b>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section" id="deepdive">
+      <div class="section-head">
+        <h2>“冲冠一怒”如何被讲成一个女人的故事</h2>
+        <p>叙事层、史料层与图像层的三处错位</p>
+      </div>
+      <div class="article-body">
+        <h3>一、诗先于史：七个字定下的因果</h3>
+        <p>
+          吴伟业写《圆圆曲》在顺治八年左右，距甲申之变不过七年。诗里“冲冠一怒为红颜”是文学修辞，不是史笔。可这句话流传太广，后来的通俗叙事几乎都从它出发：陈圆圆被刘宗敏掳走，吴三桂转而引清兵入关，王朝更替的因果被压缩成一段男女纠葛。
+        </p>
+        <p>
+          核对史料会发现链条并不严密。《明史·流贼传》记刘宗敏“掠人妇”，未点名陈圆圆；《甲申传信录》提到吴三桂的父亲吴襄被拷掠，家属遭拘，重点在家产与人身，不在某个女子。也就是说，<span class="hl">“为红颜”是诗的选择，不是当时记录的选择</span>。这一点直接影响后来所有影视剧的动机设置——它们多数仍沿诗的路子走，因为戏剧性更强。
+        </p>
+
+        <h3>二、籍贯争议：两本地方志的不同说法</h3>
+        <p>
+          陈圆圆的籍贯有苏州、常州武进两种常见说法，分歧来自地方志的记载方式。查《苏州府志》相关条目，记录的是“陈沅，字圆圆，吴人”，用的是地域泛称；《武进县志》则把她归入本地人物，附有家族线索。两说并非完全互斥——明末苏州、常州同属南直隶，人口流动频繁，一个艺伎的早年居所与籍贯登记本来就可能不一致。
+        </p>
+        <p>
+          实际使用时，判断一份考据文章是否可靠，可以看它有没有做三件事：
+        </p>
+        <ul>
+          <li>标明所引方志的版本与卷次，而不是笼统写“据地方志记载”；</li>
+          <li>区分“出生地”“籍贯登记”“成名地”三个概念，不混为一谈；</li>
+          <li>对两说并列时给出取舍理由，而不是各打五十大板。</li>
+        </ul>
+        <p>
+          缺了这三项，文章多半是把二手转述又转述了一遍。
+        </p>
+
+        <h3>三、图像层：多数“陈圆圆像”是后画的</h3>
+        <p>
+          目前流传较广的几幅陈圆圆画像，题跋多无署名，服饰样式偏清中期。判断年代可以用服饰断代法：晚明女装上衣立领、琵琶袖，裙用马面；清中期则出现更宽的镶滚与不同的领型。把这几个特征逐项对照，清代佚名仕女图被误标的情况就比较容易识别。
+        </p>
+        <table class="compare-table">
+          <thead>
+            <tr><th>判断项</th><th>晚明特征</th><th>清中期特征</th><th>常见误标</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>领型</td><td>立领为主，领高适中</td><td>领型变化多，镶滚加宽</td><td>把宽镶滚当明制</td></tr>
+            <tr><td>袖型</td><td>琵琶袖、窄袖</td><td>袖口装饰繁复</td><td>忽略袖口层次</td></tr>
+            <tr><td>裙制</td><td>马面裙，裙门素或织金</td><td>裙门装饰增多</td><td>以花纹多少断代</td></tr>
+            <tr><td>题跋</td><td>少见直接署名</td><td>多带后人题咏</td><td>把题咏当原始信息</td></tr>
+          </tbody>
+        </table>
+        <p>
+          表格里最后一列是关键：误标往往不是因为看不懂服饰，而是把后人题咏当成了画作同时代的证据。题咏的时间要单独查，不能和画作绑定。
+        </p>
+
+        <h3>四、把“可信度”拆成可核对的环节</h3>
+        <p>
+          一组陈圆圆相关材料是否可信，与其笼统说“来源可靠”，不如逐项核对。以下四项缺一项，判断就要打折扣：
+        </p>
+        <div class="layer-box">
+          <b>① 出处</b>：方志、诗文集、档案要能追到具体版本与卷次；网络转述至少标明原始出处。<br>
+          <b>② 时间</b>：材料形成年代与所记事件年代的距离，越近越有参考价值，但近不等于准。<br>
+          <b>③ 立场</b>：官方史书、私人笔记、地方志的叙述目的不同，对同一事件的取舍也不同。<br>
+          <b>④ 佐证</b>：单一材料孤证时，看有没有独立来源交叉印证，尤其是人名、地名、时间三项。
+        </div>
+        <p>
+          举例来说，某篇网文称“陈圆圆墓在云南某地”，若只给出地名而无考古报告、无族谱佐证、无文保单位认定，这属于四项里缺了出处与佐证两项，只能算传闻。反过来，若材料给出具体的考古简报编号与发掘时间，即使结论仍有争议，至少可以进入讨论。
+        </p>
+
+        <h3>五、影视改编为什么总绕不开“红颜”框架</h3>
+        <p>
+          从 1980 年代的电视剧到近年的网络电影，陈圆圆的角色功能大体没变：她是推动男性角色行动的触发点。差别在于处理方式。早期版本把她写成被动承受的悲剧人物，镜头多给面部特写与泪眼；2010 年之后的版本开始补她的主观视角，加入秦淮生活、与文人交往的段落，但篇幅通常有限。
+        </p>
+        <p>
+          这类改编的问题不在“不忠于史”，而在于把复杂的历史动因简化为单一情感动机之后，人物反而变薄。观众记住的是“冲冠一怒”，记不住她本人在乱世里怎么活。近两年一些仿妆创作者反而绕开了这层叙事，直接从晚明服饰与妆造入手，把注意力放回形制本身——这算是另一种纠偏。
+        </p>
+      </div>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>按目的选看：四条观赏路径</h2>
+        <p>先明确要解决什么问题，再决定从哪类条目入手</p>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>想做妆造复原，先看服饰条目再看扮相</h3>
+            <p>顺序反了容易先入为主。先确认晚明袄裙的领型、袖型、裙门结构，再去看影视或戏曲扮相，就能分辨哪些是形制、哪些是舞台夸张。仿妆作品放在最后看，取其配色和发型处理，形制仍以复原条目为准。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>想了解人物，先读诗再读史</h3>
+            <p>《圆圆曲》篇幅不长，读完再看《明史》相关段落，会清楚看到文学与史笔的落差。这个顺序读下来，对“冲冠一怒”这句话的分量会有更具体的把握，也不容易被二手文章带着走。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>比较不同剧目，抓三个变量</h3>
+            <p>唱腔、身段、扮相。昆曲重水磨腔与身段的圆，京剧的程式更硬，滇剧带地方色彩。同一段“夜奔”或“别离”，三个剧种的处理差别比剧情差别大。看之前先定一个变量，比较才有落点。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num"></div>
+          <div class="step-body">
+            <h3>判断一个条目值不值得花时间</h3>
+            <p>看三样：有没有标注来源，有没有给出具体年代，有没有说明取舍理由。三样齐的条目，即使观点不同意，也能拿来用；三样缺两样的，读完只剩印象，做不了参考。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>常见问答</h2>
+        <p>围绕史料、剧目与扮相的具体疑问</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>陈圆圆和吴三桂的故事有多少是史实？</summary>
+          <div class="faq-answer">
+            <p>核心事实是吴三桂在甲申之变前后与清军联合，这一点有多方材料支持。至于“为陈圆圆而引清兵”，主要来自吴伟业《圆圆曲》的文学表达，当时的官方记录与私人笔记重点在家产被掠、家属被拘，并未把动机单独归到某个女子身上。</p>
+            <p>换句话说，人物关系有影子，因果链被文学放大了。</p>
+          </div>
+        </details>
+        <details>
+          <summary>《圆圆曲》里“冲冠一怒为红颜”有几种读法？</summary>
+          <div class="faq-answer">
+            <p>常见三种。一是字面读，强调吴三桂因爱妾被掳而怒；二是反讽读，认为吴伟业借此讽刺降清，重点在“冲冠”的失态；三是结构读，把这句放在全诗铺陈里，看作叙事转折而非因果结论。三种读法对应不同的校注取舍，看校注本时要留意前言说明。</p>
+          </div>
+        </details>
+        <details>
+          <summary>昆曲《圆圆曲》和京剧《陈圆圆》扮相差别在哪？</summary>
+          <div class="faq-answer">
+            <p>昆曲多按闺门旦处理，头面用点翠加绒花，整体清淡，水袖动作幅度小；京剧的贴片与头面更繁复，程式感强，亮相的力度也更大。服饰上两者都以明制为基础，但京剧会在裙门和帔的装饰上加码，舞台效果优先于形制准确。</p>
+          </div>
+        </details>
+        <details>
+          <summary>网上流传的陈圆圆画像可信吗？</summary>
+          <div class="faq-answer">
+            <p>多数不可直接采信。流传较广的几幅题跋无署名，服饰样式偏清中期，与明末形制不符。判断时可以看领型、袖型、裙制三项，再查题跋的年代。若题咏是后人加的，不能当作画作同时代的证据。</p>
+          </div>
+        </details>
+        <details>
+          <summary>明制仿妆做陈圆圆，最容易出错的地方是什么？</summary>
+          <div class="faq-answer">
+            <p>发髻高度和眉形。晚明仕女图的发髻普遍偏低偏圆，仿妆常做成高耸的舞台髻；眉形取短弧的柳叶，不是细长的平眉。眼妆用淡赭压低饱和，腮红位置靠上，整体比现代妆淡很多，这也是仿妆作品里差别最明显的一项。</p>
+          </div>
+        </details>
+        <details>
+          <summary>滇剧版本的陈圆圆为什么值得单独看？</summary>
+          <div class="faq-answer">
+            <p>滇剧《吴三桂与陈圆圆》用丝弦腔，唱腔的起伏和江南剧种不同，身段也掺了云南本地戏曲的习惯。陈圆圆入滇之后的段落在这个版本里比重更大，和以秦淮为背景的昆曲版本正好互补。看的时候留意头饰，滇剧的处理比昆曲更接近民间审美。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>观众与创作者短评</h2>
+        <p>来自仿妆投稿者、戏曲观众与考据读者的真实反馈</p>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#8d4668">苏</span>
+            <span class="comment-name">苏幕遮_07</span>
+            <span class="comment-time">11-07</span>
+          </div>
+          <p class="comment-text">《秦淮旧影》修复版夜宴那场，烛光打在裙门上，缠枝莲的暗纹终于看得清了。之前那版糊成一团，复原根本没法参考。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#c98a2e">梨</span>
+            <span class="comment-name">梨园听雨人</span>
+            <span class="comment-time">11-06</span>
+          </div>
+          <p class="comment-text">昆曲那版圆场走得慢，有人嫌拖，我倒觉得对。闺门旦本来就不是靠快取胜的，急急忙忙反而失了分寸。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#6b2d4f">阿</span>
+            <span class="comment-name">阿箬今天不熬夜</span>
+            <span class="comment-time">11-06</span>
+          </div>
+          <p class="comment-text">点翠换成染色鹅毛这招真管用，成本差了一大截，远看几乎看不出。近看当然有区别，但舞台距离够了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#4a1c37">沉</span>
+            <span class="comment-name">沉舟侧畔</span>
+            <span class="comment-time">11-05</span>
+          </div>
+          <p class="comment-text">籍贯那条看了半天。苏州、武进两说并列的时候，作者给了取舍理由，这点比很多文章强。大部分写到这儿就含糊过去了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#8d4668">小</span>
+            <span class="comment-name">小满未满</span>
+            <span class="comment-time">11-05</span>
+          </div>
+          <p class="comment-text">1998 版旗装那个领口，我一直以为是立领，看了定妆照侧拍才发现是圆的。这种细节改对了挺好。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#c98a2e">织</span>
+            <span class="comment-name">织金裙门</span>
+            <span class="comment-time">11-04</span>
+          </div>
+          <p class="comment-text">藕荷色那套配色确实偏冷，和影视里大红大绿完全两个路子。第一次看还觉得不够“贵气”，现在习惯了反而觉得对。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#6b2d4f">青</span>
+            <span class="comment-name">青衫落拓</span>
+            <span class="comment-time">11-04</span>
+          </div>
+          <p class="comment-text">滇剧那版头饰我看了三遍，还是不太适应。可能是先入为主了，昆曲的印象太深。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#4a1c37">南</span>
+            <span class="comment-name">南窗寄傲</span>
+            <span class="comment-time">11-03</span>
+          </div>
+          <p class="comment-text">十月榜单戏曲扮相占六席，明制日常向下滑。这个变化挺有意思，说明大家开始往舞台造型那边靠了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#8d4668">半</span>
+            <span class="comment-name">半盏灯</span>
+            <span class="comment-time">11-03</span>
+          </div>
+          <p class="comment-text">辨伪那三条线索写得清楚，尤其是把题咏和画作分开看。之前转发过一张假图，现在想想挺尴尬。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#c98a2e">长</span>
+            <span class="comment-name">长街旧梦</span>
+            <span class="comment-time">11-02</span>
+          </div>
+          <p class="comment-text">说句跑题的，最近天气转凉，拍外景仿妆手都冻僵了，妆面一上脸就裂。有没有冬天拍摄的经验可以交流下。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#6b2d4f">温</span>
+            <span class="comment-name">温酒煮茶</span>
+            <span class="comment-time">11-02</span>
+          </div>
+          <p class="comment-text">《圆圆曲》读了三个版本，异文那句确实影响理解。校注本前言值得先看，不然容易被一种读法框住。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#4a1c37">柳</span>
+            <span class="comment-name">柳叶短眉</span>
+            <span class="comment-time">11-01</span>
+          </div>
+          <p class="comment-text">发髻高度这条太真实了。我第一次做的时候梳了个高髻，拍出来一看根本不是晚明的感觉，全毁在头上。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#8d4668">石</span>
+            <span class="comment-name">石桥月</span>
+            <span class="comment-time">10-31</span>
+          </div>
+          <p class="comment-text">京剧版的贴片确实繁复，但舞台效果就是好。形制准确性上确实要打折扣，看你要哪个。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#c98a2e">一</span>
+            <span class="comment-name">一苇渡江</span>
+            <span class="comment-time">10-30</span>
+          </div>
+          <p class="comment-text">考据条目里那个“四项核对”挺实用，出处、时间、立场、佐证，拿去核对别的历史人物也成立。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#6b2d4f">陈</span>
+            <span class="comment-name">陈年旧胶片</span>
+            <span class="comment-time">10-29</span>
+          </div>
+          <p class="comment-text">1980 年代那版电视剧的胶片质感现在看反而有味道，虽然画质不行，但灯光的处理比数字拍摄柔和。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head">
+            <span class="avatar" style="background:#4a1c37">无</span>
+            <span class="comment-name">无意争春</span>
+            <span class="comment-time">10-28</span>
+          </div>
+          <p class="comment-text">有些仿妆作品修图太重，肤色磨得没有质感，服饰细节也糊了。作为参考价值不大，当写真看还行。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>近期资讯</h2>
+        <p>出版、演出与展览方面的具体动态</p>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-date"><b>11-06</b><span>2026</span></div>
+          <div class="news-main">
+            <h3><a href="/#news">《圆圆曲》校注本印行，前言说明异文取舍</a></h3>
+            <p>校注者在前言列出“冲冠一怒”一句的三种读法，并说明以较早传抄本为底本的理由，附录收了两篇清人评点。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>11-03</b><span>2026</span></div>
+          <div class="news-main">
+            <h3><a href="/#news">云南省滇剧院复排《吴三桂与陈圆圆》，10 月连演四场</a></h3>
+            <p>复排版调整了入滇之后的两场戏，陈圆圆的唱段增加约六分钟，主演在接受采访时提到身段参考了本地老艺人的口述。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>10-30</b><span>2026</span></div>
+          <div class="news-main">
+            <h3><a href="/#news">南京一处晚明织物残片完成整理，马面裙纹样可辨</a></h3>
+            <p>整理报告给出残片尺寸与织造工艺，藕荷色织金缠枝纹的复原依据即来自这批材料，报告编号已公开。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>10-27</b><span>2026</span></div>
+          <div class="news-main">
+            <h3><a href="/#news">昆曲《圆圆曲》折子戏加演两场，票务 10 月 28 日开售</a></h3>
+            <p>加演场次保留了首演的闺门旦阵容，舞台版头面继续使用染色鹅毛替代方案，院团说明是出于成本与保护两方面考虑。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>10-24</b><span>2026</span></div>
+          <div class="news-main">
+            <h3><a href="/#news">地方志数字库新增《武进县志》相关卷次扫描件</a></h3>
+            <p>新增扫描件包含人物志部分，此前需要到馆查阅的条目现在可在线比对，籍贯争议的一方材料因此更易核对。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>10-20</b><span>2026</span></div>
+          <div class="news-main">
+            <h3><a href="/#news">《秦淮旧影》修复团队公布扫描参数与调色说明</a></h3>
+            <p>说明列出胶片扫描分辨率与色彩校正流程，夜宴场景的烛光层次差异即来自这一步，团队同时公开了对比样张。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head">
+        <h2>相关方向索引</h2>
+        <p>按具体条目名与类型词延伸的检索入口</p>
+      </div>
+      <div class="rec-tags">
+        <a href="/#featured">晚明马面裙复原</a>
+        <a href="/#featured">点翠头面替代做法</a>
+        <a href="/#deepdive">《圆圆曲》异文对照</a>
+        <a href="/#featured">1998 版旗装造型</a>
+        <a href="/#featured">滇剧丝弦腔唱段</a>
+        <a href="/#featured">清代佚名仕女图</a>
+        <a href="/#guide">闺门旦身段要点</a>
+        <a href="/#timeline">甲申之变前后时间线</a>
+        <a href="/#deepdive">苏州府志人物志</a>
+        <a href="/#featured">明制袄裙领型</a>
+      </div>
+    </section>
+
+    <!-- 11 人物时间线 -->
+    <section class="section" id="timeline">
+      <div class="section-head">
+        <h2>关键节点时间线</h2>
+        <p>从崇祯初到入滇之后，可查的七个节点</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <time>约 1623 年</time>
+          <h3>出生于苏州或常州一带</h3>
+          <p>籍贯两说并存，早年家世材料稀少，多依赖地方志的间接记载。</p>
+        </div>
+        <div class="timeline-item">
+          <time>约 1630 年代末</time>
+          <h3>入秦淮乐籍，以唱曲知名</h3>
+          <p>与冒襄等人的交往见于笔记，具体年份各家记载不一，大致在崇祯中后期。</p>
+        </div>
+        <div class="timeline-item">
+          <time>1642 年前后</time>
+          <h3>为吴三桂所纳</h3>
+          <p>过程有不同版本，一说经田弘遇转赠，一说为吴襄代纳，材料互有出入。</p>
+        </div>
+        <div class="timeline-item">
+          <time>1644 年</time>
+          <h3>甲申之变</h3>
+          <p>李自成入京，吴襄被拷掠，家属遭拘。陈圆圆此后的去向，各家说法不一，是争议最集中的一段。</p>
+        </div>
+        <div class="timeline-item">
+          <time>1644 年后</time>
+          <h3>随吴三桂入滇</h3>
+          <p>云南时期的记录更少，地方志与族谱中有零星提及，入滇后的生活细节多为后世演绎。</p>
+        </div>
+        <div class="timeline-item">
+          <time>1670 年代</time>
+          <h3>吴三桂起兵前后的记载</h3>
+          <p>相关材料重心转向政局，陈圆圆的个人行踪淡出记录，结局说法有出家、病逝等多种。</p>
+        </div>
+        <div class="timeline-item">
+          <time>1690 年代</time>
+          <h3>《圆圆曲》流行，形象定型</h3>
+          <p>诗歌的传播使“冲冠一怒”成为固定叙事，此后戏曲与说部的改编多从此出发。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 投稿交流 -->
+    <section class="section" id="submit">
+      <div class="section-head">
+        <h2>投稿与交流</h2>
+        <p>仿妆作品、考据材料、观后感的提交说明</p>
+      </div>
+      <div class="submit-grid">
+        <div class="submit-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#6b2d4f" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/></svg>
+            仿妆作品投稿
+          </h3>
+          <p>组图 4 至 9 张，注明服饰形制依据与妆造思路。戏曲扮相请注明剧种与角色行当。</p>
+          <p class="req"><b>审核周期</b>：3 个工作日 · 通过后进入对应分类</p>
+        </div>
+        <div class="submit-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#6b2d4f" stroke-width="1.8" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+            考据材料提交
+          </h3>
+          <p>接受方志引文、校注异文、图像断代分析。请附具体版本、卷次或报告编号，便于核对。</p>
+          <p class="req"><b>必备项</b>：出处 + 时间 + 佐证，缺项材料会退回补充</p>
+        </div>
+        <div class="submit-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#6b2d4f" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>
+            观后感与短评
+          </h3>
+          <p>看完一部剧目或一组条目后的具体观感，欢迎指出问题。短评会进入观众短评区展示。</p>
+          <p class="req"><b>展示位置</b>：观众短评 · 每周更新一次</p>
+        </div>
+        <div class="submit-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#6b2d4f" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+            条目纠错
+          </h3>
+          <p>发现年代、形制或来源标注有误，可提交纠错说明。请写明原条目、问题点与依据。</p>
+          <p class="req"><b>处理方式</b>：核实后 5 个工作日内修订并记录</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="no-result" id="noResult">没有找到与当前关键词匹配的条目，可尝试“马面裙”“圆圆曲”“点翠”等具体词。</div>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="side-rail" aria-label="辅助栏">
+    <div class="side-card">
+      <h3>本周热度榜</h3>
+      <ol class="rank-list">
+        <li><span class="rank-num">1</span><div><a href="/#featured">《秦淮旧影》修复版剧照</a><span class="rank-meta">图录 · 热度 9.4</span></div></li>
+        <li><span class="rank-num">2</span><div><a href="/#featured">昆曲《圆圆曲》折子戏</a><span class="rank-meta">戏曲 · 热度 9.1</span></div></li>
+        <li><span class="rank-num">3</span><div><a href="/#featured">“秦淮夜泊”明制仿妆</a><span class="rank-meta">仿妆 · 热度 8.8</span></div></li>
+        <li><span class="rank-num">4</span><div><a href="/#featured">1998 版旗装造型</a><span class="rank-meta">影视 · 热度 8.5</span></div></li>
+        <li><span class="rank-num">5</span><div><a href="/#featured">滇剧《吴三桂与陈圆圆》</a><span class="rank-meta">地方戏 · 热度 8.2</span></div></li>
+        <li><span class="rank-num">6</span><div><a href="/#featured">《圆圆曲》手抄本影印</a><span class="rank-meta">考据 · 热度 8.0</span></div></li>
+        <li><span class="rank-num">7</span><div><a href="/#featured">藕荷色织金马面裙</a><span class="rank-meta">服饰 · 热度 7.9</span></div></li>
+      </ol>
+    </div>
+
+    <div class="side-card">
+      <h3>更新流</h3>
+      <ul class="update-flow">
+        <li><time>11-07</time><a href="/#featured">《秦淮旧影》修复版新增 42 张剧照</a></li>
+        <li><time>11-06</time><a href="/#featured">昆曲仿妆 17 组通过审核</a></li>
+        <li><time>11-05</time><a href="/#deepdive">考据条目补入地方志引文</a></li>
+        <li><time>11-04</time><a href="/#featured">1998 版旗装造型条目修订</a></li>
+        <li><time>11-03</time><a href="/#comments">十月仿妆人气榜发布</a></li>
+      </ul>
+    </div>
+
+    <div class="side-card">
+      <h3>检索词</h3>
+      <div class="side-tags">
+        <a href="/#featured">马面裙</a>
+        <a href="/#featured">点翠头面</a>
+        <a href="/#deepdive">圆圆曲</a>
+        <a href="/#featured">闺门旦</a>
+        <a href="/#timeline">甲申之变</a>
+        <a href="/#featured">明制袄裙</a>
+        <a href="/#featured">旗装</a>
+        <a href="/#guide">丝弦腔</a>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <h3>投稿入口</h3>
+      <p style="font-size:13.5px;color:var(--text-2);line-height:1.75;margin-bottom:11px">仿妆组图、考据材料、观后感均可提交，审核周期 3 个工作日。</p>
+      <a class="btn-primary" href="/#submit" style="font-size:13.5px;padding:8px 15px;display:inline-flex">前往投稿说明</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">陈圆圆尤蜜荟</span>
+        <p>覆盖明末至当代的陈圆圆题材影像与考据材料，时间跨度自 1623 年前后至 2026 年 11 月。条目类型含影视剧照、戏曲扮相、仿妆组图、服饰复原、方志引文与图像辨伪六类，每周四、周日批量录入与修订，单次更新以条目为单位记录。</p>
+      </div>
+      <div class="footer-groups">
+        <div>
+          <h4>影像条目</h4>
+          <a href="/#featured">影视剧照</a>
+          <a href="/#featured">戏曲扮相</a>
+          <a href="/#featured">仿妆作品</a>
+          <a href="/#featured">服饰复原</a>
+        </div>
+        <div>
+          <h4>考据与解读</h4>
+          <a href="/#deepdive">深度解析</a>
+          <a href="/#timeline">人物时间线</a>
+          <a href="/#guide">观赏指南</a>
+          <a href="/#faq">常见问答</a>
+        </div>
+        <div>
+          <h4>互动</h4>
+          <a href="/#submit">投稿说明</a>
+          <a href="/#comments">观众短评</a>
+          <a href="/#news">近期资讯</a>
+          <a href="/#related">相关方向</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>条目与评论为示例内容，用于展示页面结构；史实性表述以所注文献为准。</span>
+      <span>最近一次条目修订：2026-11-07 · <a href="/#updates">查看更新记录</a></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var announceItems = document.querySelectorAll('.announce-item');
+  var ai = 0;
+  if(announceItems.length > 1){
+    setInterval(function(){
+      announceItems[ai].classList.remove('active');
+      ai = (ai + 1) % announceItems.length;
+      announceItems[ai].classList.add('active');
+    }, 5200);
+  }
+
+  var hamburger = document.getElementById('hamburger');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('overlay');
+
+  function closeNav(){
+    mainNav.classList.remove('open');
+    overlay.classList.remove('show');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','展开导航菜单');
+  }
+  function openNav(){
+    mainNav.classList.add('open');
+    overlay.classList.add('show');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','收起导航菜单');
+  }
+  hamburger.addEventListener('click', function(){
+    if(mainNav.classList.contains('open')) closeNav(); else openNav();
+  });
+  overlay.addEventListener('click', closeNav);
+  mainNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('open')) closeNav();
+  });
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight * 0.8) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 搜索筛选
+  var searchInput = document.getElementById('siteSearch');
+  var searchBtn = document.getElementById('searchBtn');
+  var noResult = document.getElementById('noResult');
+  var searchable = Array.prototype.slice.call(
+    document.querySelectorAll('.content-card, .update-row, .news-item, .cat-item, .faq-list details, .comment-card, .timeline-item, .rec-tags a')
+  );
+
+  function doSearch(){
+    var q = (searchInput.value || '').trim().toLowerCase();
+    if(!q){
+      searchable.forEach(function(el){ el.classList.remove('search-hidden'); });
+      noResult.classList.remove('show');
+      return;
+    }
+    var found = 0;
+    searchable.forEach(function(el){
+      var txt = (el.textContent || '').toLowerCase();
+      if(txt.indexOf(q) > -1){ el.classList.remove('search-hidden'); found++; }
+      else { el.classList.add('search-hidden'); }
+    });
+    if(found === 0) noResult.classList.add('show');
+    else noResult.classList.remove('show');
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value.trim()){
+      searchable.forEach(function(el){ el.classList.remove('search-hidden'); });
+      noResult.classList.remove('show');
+    }
+  });
+
+  // 滚动高亮频道
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main .section[id]'));
+  var railLinks = Array.prototype.slice.call(document.querySelectorAll('.channel-rail a'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.main-nav a'));
+  if('IntersectionObserver' in window && sections.length){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id = en.target.id;
+          railLinks.forEach(function(a){
+            a.classList.toggle('current', a.getAttribute('href') === '/#' + id);
+          });
+          navLinks.forEach(function(a){
+            a.classList.toggle('active', a.getAttribute('href') === '/#' + id);
+          });
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px', threshold:0});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "陈圆圆尤蜜荟",
+  "description": "汇聚陈圆圆相关影视剧照、戏曲扮相、仿妆作品与人物考据内容的影像资料聚合页面。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "陈圆圆和吴三桂的故事有多少是史实？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "核心事实是吴三桂在甲申之变前后与清军联合，这一点有多方材料支持。至于为陈圆圆而引清兵，主要来自吴伟业《圆圆曲》的文学表达，当时的官方记录与私人笔记重点在家产被掠、家属被拘，并未把动机单独归到某个女子身上。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《圆圆曲》里“冲冠一怒为红颜”有几种读法？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "常见三种。一是字面读，强调吴三桂因爱妾被掳而怒；二是反讽读，认为吴伟业借此讽刺降清；三是结构读，把这句放在全诗铺陈里，看作叙事转折而非因果结论。三种读法对应不同的校注取舍。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "昆曲《圆圆曲》和京剧《陈圆圆》扮相差别在哪？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "昆曲多按闺门旦处理，头面用点翠加绒花，整体清淡，水袖动作幅度小；京剧的贴片与头面更繁复，程式感强，亮相力度更大。服饰上两者都以明制为基础，但京剧会在裙门和帔的装饰上加码。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "网上流传的陈圆圆画像可信吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多数不可直接采信。流传较广的几幅题跋无署名，服饰样式偏清中期，与明末形制不符。判断时可以看领型、袖型、裙制三项，再查题跋的年代。若题咏是后人加的，不能当作画作同时代的证据。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "明制仿妆做陈圆圆，最容易出错的地方是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "发髻高度和眉形。晚明仕女图的发髻普遍偏低偏圆，仿妆常做成高耸的舞台髻；眉形取短弧的柳叶，不是细长的平眉。眼妆用淡赭压低饱和，腮红位置靠上，整体比现代妆淡很多。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "滇剧版本的陈圆圆为什么值得单独看？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "滇剧《吴三桂与陈圆圆》用丝弦腔，唱腔的起伏和江南剧种不同，身段也掺了云南本地戏曲的习惯。陈圆圆入滇之后的段落在这个版本里比重更大，和以秦淮为背景的昆曲版本正好互补。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+              </html>
