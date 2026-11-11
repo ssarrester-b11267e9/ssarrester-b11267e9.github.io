@@ -1,0 +1,2088 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9178.cn网页 - 游戏资讯与深度攻略聚合</title>
+  <meta name="description" content="9178.cn网页是为游戏玩家整理的资讯与攻略聚合门户，涵盖新游评测、版本更新、隐藏任务、装备搭配、玩家社区热议与赛事复盘，适合寻找实用攻略和了解游戏动态的玩家浏览。">
+  <meta name="keywords" content="9178.cn网页">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a2b4c'/%3E%3Cpath d='M10 10h12v3H10zm0 6h12v3H10zm0 6h8v3h-8z' fill='%23f0b43c'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #1a2b4c;
+      --primary-light: #2f4570;
+      --primary-dark: #0f1a30;
+      --accent: #f0b43c;
+      --accent-soft: #fdf3dd;
+      --bg: #f5f6fa;
+      --surface: #ffffff;
+      --text-primary: #1e1e2a;
+      --text-secondary: #4a4e5a;
+      --text-tertiary: #7a7f8c;
+      --border: #e2e5ec;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 999px;
+      --shadow-default: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.08);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      --max-width: 1320px;
+      --header-height: 112px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 130px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { font-family: inherit; cursor: pointer; }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ----- 吸顶公告条 + 页头 ----- */
+    .sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .announcement {
+      background: var(--primary-dark);
+      color: #dce3f0;
+      font-size: 13px;
+      padding: 8px 0;
+      overflow: hidden;
+    }
+    .announcement .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 24px;
+    }
+    .announcement .brand-mini {
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .announcement .item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .announcement .item .date {
+      color: #9aa8c0;
+      font-size: 12px;
+    }
+    .announcement .item .tag {
+      background: rgba(240,180,60,0.18);
+      color: var(--accent);
+      padding: 1px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .announcement .item .name {
+      color: #eef2f8;
+    }
+
+    .header-main {
+      padding: 12px 0;
+    }
+    .header-main .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      transition: transform 0.25s ease;
+    }
+    .logo-mark:hover { transform: rotate(-3deg) scale(1.02); }
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+    .nav-main ul {
+      display: flex;
+      gap: 4px 18px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-main a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 6px 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-main a:hover, .nav-main a.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      padding: 0 12px;
+      height: 36px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box:focus-within {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(26,43,76,0.08);
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      width: 140px;
+      padding: 0 4px;
+      color: var(--text-primary);
+    }
+    .search-box input::placeholder { color: var(--text-tertiary); }
+    .search-box button {
+      background: none;
+      border: none;
+      color: var(--text-tertiary);
+      font-size: 16px;
+      padding: 0 2px;
+      line-height: 1;
+    }
+    .search-box button:hover { color: var(--primary); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 0 18px;
+      height: 36px;
+      border-radius: var(--radius-btn);
+      border: none;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 0 18px;
+      height: 36px;
+      border-radius: var(--radius-btn);
+      border: 1.5px solid var(--primary);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--primary);
+    }
+
+    /* ----- 首屏 ----- */
+    .hero {
+      position: relative;
+      background: linear-gradient(145deg, #0f1a30 0%, #1a2b4c 55%, #233a60 100%);
+      color: #fff;
+      padding: 56px 0 64px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(240,180,60,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -160px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(47,69,112,0.5) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #c8d2e6;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .hero-actions .btn-primary {
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-weight: 700;
+      height: 44px;
+      padding: 0 26px;
+      font-size: 15px;
+    }
+    .hero-actions .btn-primary:hover { background: #f7c85a; }
+    .hero-actions .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      color: #dce3f0;
+      font-weight: 500;
+      font-size: 15px;
+      border-bottom: 1px dashed rgba(220,227,240,0.4);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .hero-actions .btn-ghost:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .hero-card:hover {
+      background: rgba(255,255,255,0.11);
+      border-color: rgba(240,180,60,0.4);
+    }
+    .hero-card .hc-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(240,180,60,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .hero-card .hc-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .hero-card .hc-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .hero-card .hc-meta {
+      font-size: 12px;
+      color: #9aa8c0;
+      display: flex;
+      gap: 12px;
+    }
+
+    /* ----- 主布局：三栏 ----- */
+    .layout-three {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      padding: 32px 0 64px;
+    }
+    .sidebar-left {
+      position: sticky;
+      top: 130px;
+      align-self: start;
+    }
+    .sidebar-left .channel-nav {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 12px;
+      box-shadow: var(--shadow-default);
+    }
+    .sidebar-left .channel-nav h3 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-tertiary);
+      padding: 0 8px 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+    .sidebar-left .channel-nav ul {
+      list-style: none;
+    }
+    .sidebar-left .channel-nav li a {
+      display: block;
+      padding: 8px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+      line-height: 1.4;
+    }
+    .sidebar-left .channel-nav li a:hover {
+      background: var(--accent-soft);
+      color: var(--primary);
+    }
+    .sidebar-left .channel-nav li a.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .main-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .sidebar-right {
+      position: sticky;
+      top: 130px;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .side-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-default);
+    }
+    .side-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .side-card h3::before {
+      content: "";
+      width: 3px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .rank-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rank-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .rank-list .num {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--text-tertiary);
+      min-width: 18px;
+      font-style: italic;
+    }
+    .rank-list li:nth-child(1) .num { color: #e6a817; }
+    .rank-list li:nth-child(2) .num { color: #b0b8c4; }
+    .rank-list li:nth-child(3) .num { color: #cd8b5a; }
+    .rank-list .item-name {
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .rank-list .item-name:hover { color: var(--primary-light); }
+    .rank-list .meta {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+    .update-stream {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .update-stream li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      padding-left: 10px;
+      border-left: 2px solid var(--border);
+    }
+    .update-stream li strong {
+      display: block;
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .update-stream li .time {
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    /* ----- 板块通用 ----- */
+    .section {
+      scroll-margin-top: 130px;
+    }
+    .section-header {
+      margin-bottom: 20px;
+    }
+    .section-header h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .section-header .sub {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    /* ----- 概览 ----- */
+    .overview-text {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-default);
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    .overview-text p { margin-bottom: 14px; }
+    .overview-text p:last-child { margin-bottom: 0; }
+    .overview-text strong { color: var(--text-primary); }
+
+    /* ----- 精选卡片 ----- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.2s;
+      border: 1px solid transparent;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      border-color: var(--border);
+    }
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #e8ecf3;
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .card-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--accent-soft);
+      color: #8a6918;
+      white-space: nowrap;
+      line-height: 1.6;
+    }
+    .tag.blue { background: #e3e9f5; color: var(--primary-light); }
+    .tag.green { background: #e0f0e8; color: #2f6f4f; }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .card-meta .hot { color: #d97b2b; font-weight: 600; }
+
+    /* ----- 最新更新列表 ----- */
+    .update-list {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .update-list li {
+      display: flex;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+      transition: background 0.15s;
+    }
+    .update-list li:last-child { border-bottom: none; }
+    .update-list li:hover { background: #fafbfe; }
+    .update-list .date-badge {
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-light);
+      background: #eef2f8;
+      padding: 2px 8px;
+      border-radius: 4px;
+      line-height: 1.6;
+    }
+    .update-list .ul-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .update-list .ul-desc {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    /* ----- 分类入口 ----- */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 14px;
+      box-shadow: var(--shadow-default);
+      text-align: center;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .category-item:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+    .category-item .cat-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+    .category-item .cat-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .category-item .cat-count {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* ----- 深度解析 ----- */
+    .deep-dive {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 28px 30px;
+      box-shadow: var(--shadow-default);
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    .deep-dive h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 24px 0 10px;
+      line-height: 1.4;
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p { margin-bottom: 12px; }
+    .deep-dive ul {
+      margin: 8px 0 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .deep-dive li { line-height: 1.7; }
+    .deep-dive .highlight-box {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #5a4a1a;
+    }
+    .deep-dive .highlight-box strong { color: #8a6918; }
+
+    /* ----- 体验指南 ----- */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .guide-step {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 20px 20px 18px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 3px solid var(--accent);
+    }
+    .guide-step .step-num {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .guide-step h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .guide-step p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ----- FAQ ----- */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: color 0.15s;
+    }
+    .faq-item summary:hover { color: var(--primary-light); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      content: "−";
+      color: var(--primary);
+    }
+    .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* ----- 用户评论 ----- */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comment-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    .comment-body {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+    .comment-body em {
+      font-style: normal;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* ----- 相关资讯 ----- */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .news-item {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: #fafbfe; }
+    .news-item .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .news-item .news-meta {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      display: flex;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .news-item .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ----- 相关推荐 ----- */
+    .recommend-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .recommend-tags a {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .recommend-tags a:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #f8f9fc;
+    }
+
+    /* ----- 补充板块：榜单 + 证言 ----- */
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .extra-panel {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 22px 22px 18px;
+      box-shadow: var(--shadow-default);
+    }
+    .extra-panel h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .extra-panel h3 .badge {
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--accent-soft);
+      color: #8a6918;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .top-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .top-list li {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+    .top-list .rank-num {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--accent);
+      font-style: italic;
+      min-width: 20px;
+    }
+    .top-list .top-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .top-list .top-desc {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      display: block;
+      margin-top: 2px;
+    }
+    .testimonial-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .testimonial-item {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+    }
+    .testimonial-item .quote {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    .testimonial-item .author {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    /* ----- 投稿互动入口 ----- */
+    .contribute-bar {
+      background: linear-gradient(90deg, #1a2b4c 0%, #2f4570 100%);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: #fff;
+    }
+    .contribute-bar .cb-text h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .contribute-bar .cb-text p {
+      font-size: 13px;
+      color: #c8d2e6;
+      line-height: 1.5;
+    }
+    .contribute-bar .btn-primary {
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-weight: 700;
+      height: 42px;
+      padding: 0 24px;
+    }
+    .contribute-bar .btn-primary:hover { background: #f7c85a; }
+
+    /* ----- 页尾 ----- */
+    .footer {
+      background: var(--primary-dark);
+      color: #9aa8c0;
+      padding: 48px 0 32px;
+      margin-top: 32px;
+    }
+    .footer .container {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand .logo-text {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #9aa8c0;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #eef2f8;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-col a {
+      font-size: 13px;
+      color: #9aa8c0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 32px auto 0;
+      padding: 20px 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: #6b7a94;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .footer-bottom .update-note {
+      color: #8a95a8;
+    }
+
+    /* ----- 回到顶部 ----- */
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 32px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.25s, visibility 0.25s, transform 0.25s, background 0.2s;
+      z-index: 90;
+    }
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-top:hover { background: var(--primary-light); }
+
+    /* ----- 搜索无结果 ----- */
+    .search-empty {
+      display: none;
+      padding: 16px 20px;
+      background: var(--accent-soft);
+      border-radius: var(--radius-card);
+      font-size: 14px;
+      color: #8a6918;
+      margin-top: 12px;
+    }
+    .search-empty.show { display: block; }
+    .filtered-hide { display: none !important; }
+
+    /* ----- 响应式 ----- */
+    @media (max-width: 1024px) {
+      .layout-three {
+        grid-template-columns: 1fr 240px;
+      }
+      .sidebar-left {
+        display: none;
+      }
+      .hero .container {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual { display: none; }
+      .footer .container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 740px) {
+      .layout-three {
+        grid-template-columns: 1fr;
+      }
+      .sidebar-right {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .menu-toggle { display: block; }
+      .nav-main {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        padding: 12px 24px;
+        box-shadow: var(--shadow-hover);
+      }
+      .nav-main.open { display: block; }
+      .nav-main ul { flex-direction: column; gap: 2px; }
+      .nav-main a { padding: 10px 0; display: block; border-bottom: none; }
+      .header-main .container { position: relative; flex-wrap: wrap; }
+      .search-box input { width: 100px; }
+      .header-actions .btn-primary { display: none; }
+      .announcement .container { gap: 6px 14px; }
+      .announcement .brand-mini { font-size: 12px; }
+      .hero { padding: 36px 0 44px; }
+      .hero h1 { font-size: 1.8rem; }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer .container {
+        grid-template-columns: 1fr;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .deep-dive { padding: 20px 18px; }
+      .contribute-bar { flex-direction: column; align-items: flex-start; }
+      .sidebar-right {
+        grid-template-columns: 1fr;
+      }
+      .back-top {
+        right: 16px;
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-top">
+    <div class="announcement">
+      <div class="container">
+        <span class="brand-mini">9178.cn网页</span>
+        <span class="item">
+          <span class="date">2026-11-08</span>
+          <span class="tag">新条目</span>
+          <span class="name">《星穹遗迹》隐藏结局触发条件整理</span>
+        </span>
+        <span class="item">
+          <span class="tag">更新</span>
+          <span class="name">11月第1周版本补丁汇总 · 12款游戏平衡调整</span>
+        </span>
+      </div>
+    </div>
+    <header class="header-main">
+      <div class="container">
+        <a href="/" class="logo-area" aria-label="9178.cn网页首页">
+          <span class="logo-mark">91</span>
+          <span class="logo-text">9178.cn网页</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+        <nav class="nav-main" id="mainNav" aria-label="主导航">
+          <ul>
+            <li><a href="/#overview" class="active">领域概览</a></li>
+            <li><a href="/#featured">精选推荐</a></li>
+            <li><a href="/#updates">最新动态</a></li>
+            <li><a href="/#categories">分类入口</a></li>
+            <li><a href="/#deepdive">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问答</a></li>
+            <li><a href="/#comments">玩家评论</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="search-box">
+            <input type="search" id="searchInput" placeholder="搜索条目/攻略…" aria-label="搜索站内条目">
+            <button id="searchBtn" aria-label="搜索">🔍</button>
+          </div>
+          <a href="/#contribute" class="btn-primary">投稿攻略</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>9178.cn网页</h1>
+        <p class="hero-desc">
+          聚焦单机与联机游戏的版本更新、隐藏机制、配装思路和赛事复盘。这里汇总了《星穹遗迹》全结局条件、《暗区突围》新赛季物资分布、独立游戏《沉没意志》剧情分支等具体条目，每一条都写明触发条件、实测数据或玩家反馈来源。
+        </p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览精选条目</a>
+          <a href="/#updates" class="btn-ghost">查看今日更新 →</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card">
+          <span class="hc-icon">🎮</span>
+          <div class="hc-text">
+            <div class="hc-title">《星穹遗迹》1.4.2 补丁解析</div>
+            <div class="hc-meta"><span>11-07</span><span>阅读 3.2k</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="hc-icon">🗡️</span>
+          <div class="hc-text">
+            <div class="hc-title">《暗区突围》新赛季物资分布图</div>
+            <div class="hc-meta"><span>11-06</span><span>收藏 892</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="hc-icon">🏆</span>
+          <div class="hc-text">
+            <div class="hc-title">格斗大赛 CPT 2026 中国区复盘</div>
+            <div class="hc-meta"><span>11-05</span><span>评论 47</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区：三栏布局 -->
+  <div class="container">
+    <div class="layout-three">
+      <!-- 左频道索引 -->
+      <aside class="sidebar-left" aria-label="频道索引">
+        <nav class="channel-nav">
+          <h3>频道</h3>
+          <ul>
+            <li><a href="/#overview" class="active">全部条目</a></li>
+            <li><a href="/#categories">新游评测</a></li>
+            <li><a href="/#categories">版本更新</a></li>
+            <li><a href="/#categories">隐藏任务</a></li>
+            <li><a href="/#categories">装备配装</a></li>
+            <li><a href="/#categories">剧情解析</a></li>
+            <li><a href="/#categories">赛事复盘</a></li>
+            <li><a href="/#categories">MOD 推荐</a></li>
+            <li><a href="/#categories">联机攻略</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- 中主内容 -->
+      <main class="main-content">
+
+        <!-- 1. 主题领域概览 -->
+        <section id="overview" class="section">
+          <div class="section-header">
+            <h2>游戏资讯与攻略的条目类型分布</h2>
+            <p class="sub">当前活跃领域：角色扮演、射击、独立游戏、格斗竞技</p>
+          </div>
+          <div class="overview-text">
+            <p>游戏内容消费大致分成几个方向：<strong>版本更新公告的拆解</strong>、<strong>隐藏机制触发条件的验证</strong>、<strong>装备与技能搭配的数值推演</strong>、<strong>剧情分支的走向对比</strong>，以及赛事对局的关键节点复盘。每个方向对信息颗粒度的要求不同——版本更新看的是改动前后的数值差异和生效时间；隐藏任务看的是前置条件、触发坐标和是否需要特定道具；配装看的是属性阈值和实战容错率。</p>
+            <p>2026 年 11 月上旬值得留意的具体条目包括：《星穹遗迹》1.4.2 补丁对“虚空回响”技能冷却的调整（从 18 秒改为 22 秒），直接影响高难度副本的循环轴；《暗区突围》新赛季“北山禁区”物资刷新点从 7 个缩减为 5 个，但单点收益上调 40%；独立游戏《沉没意志》在 11 月 3 日更新了第三章的双结局分歧节点，存档兼容但需要重新触发关键对话。</p>
+            <p>格斗赛事方面，CPT 2026 中国区决赛在 11 月 2 日结束，八强对局中有 5 场打满决胜局，角色选择集中在“影隆”“嘉米”“拉希德”三人，胜率分别为 52%、48%、44%。这些数字来自赛事官方对战记录页，后续复盘会按角色和地图分别拆解。MOD 方向，《博德之门3》的“5E 规则扩展”模组在 11 月第一周更新到 2.1 版，新增 14 个法术和 3 个亚种，安装前需要确认游戏本体版本不低于 4.1.1。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section id="featured" class="section">
+          <div class="section-header">
+            <h2>本周值得投入时间的 8 个具体条目</h2>
+            <p class="sub">按实测数据与玩家反馈筛选，每条标注类型与热度</p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-starfall/400/300" alt="星穹遗迹隐藏结局界面截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>《星穹遗迹》全 4 结局触发条件表</h4>
+                <div class="card-tags"><span class="tag">剧情解析</span><span class="tag blue">多结局</span><span class="tag green">实测</span></div>
+                <p class="card-desc">四个结局分别对应“虚空回响”技能的使用次数、第七章是否交出星核、以及与 NPC 艾琳的对话选项。实测第三个结局需要在前六章累计使用回响不超过 3 次。</p>
+                <div class="card-meta"><span>更新 11-07</span><span class="hot">热度 4.8k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-darkzone/400/300" alt="暗区突围北山禁区地图标记" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>《暗区突围》北山禁区 5 个高收益刷新点</h4>
+                <div class="card-tags"><span class="tag">联机攻略</span><span class="tag blue">物资分布</span><span class="tag green">地图</span></div>
+                <p class="card-desc">5 个刷新点分别在雷达站地下室、缆车控制室、废弃油库、北山哨所二楼、隧道中段。单点平均产出从 1.2 万柯恩币升至 1.7 万，但撤离路线多经过开阔地带。</p>
+                <div class="card-meta"><span>更新 11-06</span><span class="hot">热度 3.9k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-cpt/400/300" alt="CPT2026中国区决赛对战画面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>CPT 2026 中国区八强角色胜率与地图选择</h4>
+                <div class="card-tags"><span class="tag">赛事复盘</span><span class="tag blue">格斗</span><span class="tag green">数据</span></div>
+                <p class="card-desc">八强对局共 15 场，影隆出场 7 次胜 4 场，嘉米出场 5 次胜 2 场。地图选择上“训练场”被 ban 率最高，达到 60%，选手更倾向“夜幕码头”和“废弃工厂”。</p>
+                <div class="card-meta"><span>更新 11-05</span><span class="hot">热度 2.7k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-sinking/400/300" alt="沉没意志第三章对话选择界面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>《沉没意志》第三章双结局分歧节点</h4>
+                <div class="card-tags"><span class="tag">剧情解析</span><span class="tag blue">独立游戏</span><span class="tag green">分支</span></div>
+                <p class="card-desc">关键对话在“灯塔地下室”与工程师老陈的第三次交谈，选择“交出记录仪”或“保留证据”会走向不同结局。11 月 3 日更新后，两个结局都新增了 2 段后日谈文本。</p>
+                <div class="card-meta"><span>更新 11-04</span><span class="hot">热度 2.1k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-bg3mod/400/300" alt="博德之门3五版规则扩展模组界面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>《博德之门3》5E 规则扩展 MOD 2.1 版</h4>
+                <div class="card-tags"><span class="tag">MOD 推荐</span><span class="tag blue">规则扩展</span><span class="tag green">兼容性</span></div>
+                <p class="card-desc">新增 14 个法术（含 3 个 5 环法术）和 3 个亚种（半精灵变体、地底侏儒、神魔裔）。需要游戏本体 4.1.1 以上，与“战术扩展”MOD 同时启用时需把加载顺序排在其后。</p>
+                <div class="card-meta"><span>更新 11-03</span><span class="hot">热度 1.8k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-starfall-boss/400/300" alt="星穹遗迹虚空回响技能冷却示意" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>虚空回响冷却增至 22 秒后的循环轴调整</h4>
+                <div class="card-tags"><span class="tag">版本更新</span><span class="tag blue">数值调整</span><span class="tag green">配装</span></div>
+                <p class="card-desc">1.4.2 补丁把“虚空回响”冷却从 18 秒改为 22 秒，原来 18 秒循环轴需要插入一个 4 秒的填充技能。推荐用“星尘箭”或“引力井”补位，前者伤害稳定后者控场更优。</p>
+                <div class="card-meta"><span>更新 11-07</span><span class="hot">热度 3.3k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-coop/400/300" alt="双人合作游戏分屏画面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>《双影奇境》双人合作 6 个必解谜题路线</h4>
+                <div class="card-tags"><span class="tag">联机攻略</span><span class="tag blue">合作解谜</span><span class="tag green">路线</span></div>
+                <p class="card-desc">第 2 章“镜像书房”、第 4 章“重力井”和第 6 章“时间差”需要两人分屏操作，其中“镜像书房”的书籍排列顺序与单人模式不同，需要按 3-1-4-2 摆放。</p>
+                <div class="card-meta"><span>更新 11-02</span><span class="hot">热度 1.5k</span></div>
+              </div>
+            </article>
+            <article class="card">
+              <img src="https://picsum.photos/seed/game-indie/400/300" alt="独立游戏像素风格场景" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <h4>11 月第 1 周 4 款独立游戏试玩反馈</h4>
+                <div class="card-tags"><span class="tag">新游评测</span><span class="tag blue">独立游戏</span><span class="tag green">试玩</span></div>
+                <p class="card-desc">《苔原信使》主打徒步叙事，试玩 2 小时遇到 3 次脚本卡死；《钴蓝车站》是像素解谜，谜题难度曲线前松后紧；《碎片回声》和《夜班列车》完成度较高，前者有 6 小时流程后者约 4 小时。</p>
+                <div class="card-meta"><span>更新 11-01</span><span class="hot">热度 1.2k</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 / 动态 -->
+        <section id="updates" class="section">
+          <div class="section-header">
+            <h2>最新条目更新与版本动态</h2>
+            <p class="sub">按发布时间排序，含游戏名、版本号和具体改动</p>
+          </div>
+          <ul class="update-list">
+            <li>
+              <span class="date-badge">11-08</span>
+              <div><span class="ul-title">《星穹遗迹》1.4.2b 热修：修复“虚空回响”冷却显示错误</span><span class="ul-desc">补丁后冷却实际为 22 秒但 UI 仍显示 18 秒，热修已同步修正。同时修复了第七章星核交付后任务追踪不消失的问题。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-07</span>
+              <div><span class="ul-title">《暗区突围》新赛季“北山禁区”物资刷新点从 7 个减至 5 个</span><span class="ul-desc">官方公告确认移除隧道东侧和缆车南站两个低收益点，剩余 5 个点单次搜索产出上调约 40%。撤离点数量不变。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-06</span>
+              <div><span class="ul-title">《沉没意志》第三章新增双结局后日谈文本</span><span class="ul-desc">两个结局各增加 2 段后日谈，涉及工程师老陈和灯塔管理员的后续去向。存档兼容，但需要读取第三章分歧点前的自动存档才能触发。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-05</span>
+              <div><span class="ul-title">CPT 2026 中国区决赛对战记录公开</span><span class="ul-desc">官方对战记录页上传了八强至决赛共 15 场对局的角色、地图和帧数数据。影隆出场 7 次胜率 57%，嘉米 5 次胜率 40%。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-04</span>
+              <div><span class="ul-title">《博德之门3》5E 规则扩展 MOD 2.1 版发布</span><span class="ul-desc">新增 14 个法术和 3 个亚种，修复了 2.0 版中“半精灵变体”在角色创建时属性加值丢失的问题。作者提示需本体 4.1.1 以上。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-03</span>
+              <div><span class="ul-title">《双影奇境》第 6 章“时间差”合作谜题路线修正</span><span class="ul-desc">玩家“齿轮与发条”在 10 月 31 日提交的路线错误已被采纳，修正后第 6 章分屏操作顺序改为先左后右，原来攻略写反了。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-02</span>
+              <div><span class="ul-title">《苔原信使》试玩版 0.7.3 修复 3 处脚本卡死</span><span class="ul-desc">开发者更新日志列出具体卡死触发位置：第二章木屋、第三章冰桥、第四章营地篝火。修复后存档可继续使用。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">11-01</span>
+              <div><span class="ul-title">《钴蓝车站》发布 1.2 版难度调整补丁</span><span class="ul-desc">第 7 关“信号塔”的限时从 90 秒延长到 120 秒，第 9 关“倒计时”的谜题提示增加语音播报。玩家反馈集中在第 7 关时间不够。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">10-30</span>
+              <div><span class="ul-title">《暗区突围》官方公布赛季物资分布热力图</span><span class="ul-desc">热力图显示北山禁区雷达站地下室为最高频搜索区域，单局平均被搜索 4.7 次。官方建议玩家按出生点选择东侧或西侧路线。</span></div>
+            </li>
+            <li>
+              <span class="date-badge">10-28</span>
+              <div><span class="ul-title">《星穹遗迹》玩家“夜航星”发布全结局流程图</span><span class="ul-desc">流程图按章节拆解了 4 个结局的 7 个关键分歧点，其中第 3 个结局需要“累计使用回响≤3 次”的条件被 23 条评论确认有效。</span></div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section id="categories" class="section">
+          <div class="section-header">
+            <h2>按游戏类型与需求查找条目</h2>
+            <p class="sub">8 个分类对应不同搜索场景，点击进入对应条目列表</p>
+          </div>
+          <div class="category-grid">
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🆕</span>
+              <span class="cat-name">新游评测</span>
+              <span class="cat-count">本周 12 条</span>
+            </a>
+            <a href="/#updates" class="category-item">
+              <span class="cat-icon">🔄</span>
+              <span class="cat-name">版本更新</span>
+              <span class="cat-count">本周 23 条</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🔍</span>
+              <span class="cat-name">隐藏任务</span>
+              <span class="cat-count">累计 41 条</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">⚙️</span>
+              <span class="cat-name">装备配装</span>
+              <span class="cat-count">累计 67 条</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">📖</span>
+              <span class="cat-name">剧情解析</span>
+              <span class="cat-count">累计 35 条</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🏅</span>
+              <span class="cat-name">赛事复盘</span>
+              <span class="cat-count">本月 9 条</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">🧩</span>
+              <span class="cat-name">MOD 推荐</span>
+              <span class="cat-count">累计 28 条</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="cat-icon">👥</span>
+              <span class="cat-name">联机攻略</span>
+              <span class="cat-count">累计 53 条</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析正文 -->
+        <section id="deepdive" class="section">
+          <div class="section-header">
+            <h2>隐藏机制与版本改动：三个可核对的判断维度</h2>
+            <p class="sub">以《星穹遗迹》《暗区突围》《博德之门3》MOD 为例</p>
+          </div>
+          <div class="deep-dive">
+            <h3>一、冷却改动影响的是循环轴，不是单次伤害</h3>
+            <p>《星穹遗迹》1.4.2 补丁把“虚空回响”冷却从 18 秒改成 22 秒，技能面板伤害没变，变的是整场战斗的输出节奏。18 秒循环时，玩家可以在两次回响之间插入两个小技能；22 秒后，插入两个小技能会多出约 1.5 秒空档，这个空档需要第三个填充技能或走位来填。</p>
+            <p>具体对比：更新前 18 秒循环轴为“回响 → 星尘箭 → 引力井 → 回响”，每轮输出 3 个技能。更新后同样顺序打完需要 22 秒，空出的 1.5 秒用“星尘箭”补位则总伤害提升约 4%，但法力消耗增加 9%。如果改用“引力井”补位，伤害提升约 6% 但控场时间重叠浪费了 0.8 秒。</p>
+            <div class="highlight-box">
+              <strong>可核对的中段：</strong>玩家“夜航星”在 11 月 7 日的实测视频中记录了 12 次循环，更新前平均每轮 18.2 秒，更新后若不加填充技能平均每轮 22.1 秒，DPS 从 1.42 万降到 1.28 万，降幅约 9.8%。他的结论是“必须补技能才能维持原输出”。
+            </div>
+            <h3>二、物资刷新点减少不等于收益下降，要看单点期望值</h3>
+            <p>《暗区突围》北山禁区从 7 个刷新点减到 5 个，乍看是收益削弱。但官方公告写明单点搜索产出上调约 40%。按 10 月 30 日热力图的统计，原 7 个点中隧道东侧和缆车南站合计只占全部搜索次数的 11%，单次平均产出分别为 0.3 万和 0.5 万柯恩币。剩下 5 个点单次平均 1.2 万，上调 40% 后约 1.7 万。</p>
+            <p>算总账：原 7 个点单局期望产出约为 5×1.2 + 0.3 + 0.5 = 6.8 万；新 5 个点单局期望约为 5×1.7 = 8.5 万。期望值上升 25%，但风险在于 5 个点有 3 个位于开阔地带，撤离路线暴露概率更高。这是收益与风险的对换，不是单纯加强或削弱。</p>
+            <h3>三、MOD 兼容性看加载顺序和版本号，不看下载量</h3>
+            <p>《博德之门3》5E 规则扩展 MOD 2.1 版要求本体 4.1.1 以上。2.0 版有玩家反馈“半精灵变体”属性加值丢失，原因是 2.0 版把亚种数据写进了旧版角色创建流程，本体 4.1.0 的流程接口和 4.1.1 不同。2.1 版重写了这部分逻辑，但作者在说明页写明：与“战术扩展”MOD 同时启用时，必须把 5E 规则扩展排在加载顺序前面，否则后加载的“战术扩展”会覆盖法术表。</p>
+            <p>验证方式：在游戏主菜单的“模组”界面，5E 规则扩展的版本号应显示 2.1.0，加载顺序编号应小于“战术扩展”。如果顺序反了，进入游戏后新建角色时看不到新增的 14 个法术——这是最直接的检查点，不需要读日志。</p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section id="guide" class="section">
+          <div class="section-header">
+            <h2>内容消费路径：先看什么，后看什么</h2>
+            <p class="sub">按信息类型和判断成本排序，适合刚接触某款游戏或某个类型的玩家</p>
+          </div>
+          <div class="guide-grid">
+            <div class="guide-step">
+              <span class="step-num">01</span>
+              <h4>先看版本更新公告的“改动列表”</h4>
+              <p>官方公告的改动列表比任何二手解析都可靠。重点看技能冷却、装备属性、刷新概率三类数字，其他文字可以略过。比如 1.4.2 补丁只改了一条冷却，那就只需要关注这一条。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">02</span>
+              <h4>再看玩家实测视频或图文，核对“前后对比”</h4>
+              <p>实测的价值在于给出具体数字。看的时候找“更新前”和“更新后”两组数据，没有对比的实测只能算个人体验。比如“夜航星”的视频列出了 12 次循环的平均耗时，这种就可以用。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">03</span>
+              <h4>判断一个条目值不值得投入时间：看它是否给出可验证的条件</h4>
+              <p>“触发隐藏结局需要累计使用回响不超过 3 次”这种条目，你可以在自己的存档里数次数验证。写成“与命运抗争”之类的描述就没法验证，跳过。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">04</span>
+              <h4>同类条目比较：优先选带日期和版本号的</h4>
+              <p>两份《星穹遗迹》结局攻略，一份写“1.4.2 版实测”，另一份没写版本号。选前者。版本号意味着作者知道改动可能影响结论，没写版本号的攻略可能已经过期。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">05</span>
+              <h4>MOD 类内容先看“兼容性”一栏，再看功能</h4>
+              <p>功能再多，加载顺序不对或本体版本不匹配就是白装。5E 规则扩展 2.1 版的兼容性写明了本体 4.1.1 和加载顺序，这两条比新增了 14 个法术更优先确认。</p>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">06</span>
+              <h4>赛事复盘先看角色和地图数据，再看选手操作</h4>
+              <p>CPT 2026 中国区八强影隆出场 7 次胜率 57%，这个数字告诉你角色的强度位置。选手的连招细节要在数据之后看，否则容易把个别对局的偶然操作当成通用结论。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="section">
+          <div class="section-header">
+            <h2>常见问答</h2>
+            <p class="sub">6 个来自玩家搜索的典型问题</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>《星穹遗迹》第三个结局到底要不要交出星核？</summary>
+              <div class="faq-answer">不交。第三个结局的触发条件里，“第七章是否交出星核”必须选“保留”。同时还要满足前六章累计使用“虚空回响”不超过 3 次。两个条件缺一不可，只保留星核但回响超次数会进入第二个结局。</div>
+            </details>
+            <details class="faq-item">
+              <summary>暗区突围北山禁区刷新点少了两个，收益是变高还是变低？</summary>
+              <div class="faq-answer">单局期望收益变高。5 个点单次平均产出从 1.2 万提到 1.7 万柯恩币，按 5 个点算期望值 8.5 万，原 7 个点期望约 6.8 万。但 5 个点里有 3 个在开阔地带，撤离风险比原来高，收益和风险同时上升。</div>
+            </details>
+            <details class="faq-item">
+              <summary>博德之门3的5E规则扩展MOD和战术扩展MOD能一起装吗？</summary>
+              <div class="faq-answer">能，但加载顺序必须把 5E 规则扩展排在战术扩展前面。顺序反了的话，战术扩展会覆盖法术表，新建角色时看不到新增的 14 个法术。检查方法是看模组界面里的加载顺序编号，5E 规则扩展的编号要更小。</div>
+            </details>
+            <details class="faq-item">
+              <summary>沉没意志11月3日更新后，旧存档还能触发新结局吗？</summary>
+              <div class="faq-answer">存档本身兼容，但新增的后日谈文本需要读取第三章分歧点之前的自动存档才能触发。如果旧存档已经过了分歧点，后日谈不会出现，需要从更早的存档重新走一遍关键对话。</div>
+            </details>
+            <details class="faq-item">
+              <summary>CPT 2026 中国区决赛影隆胜率多少，为什么八强都在用？</summary>
+              <div class="faq-answer">影隆出场 7 次胜 4 场，胜率 57%。八强选手选它的原因是中距离压制能力强，在“夜幕码头”和“废弃工厂”两张常用地图上有稳定的牵制手段。不过决赛里影隆对嘉米的对局胜率只有 50%，没有明显优势。</div>
+            </details>
+            <details class="faq-item">
+              <summary>苔原信使试玩版之前卡死的地方修好了吗？</summary>
+              <div class="faq-answer">0.7.3 版修复了 3 处脚本卡死，分别在第二章木屋、第三章冰桥和第四章营地篝火。修复后旧存档可以直接继续，不需要重开。开发者更新日志里逐个列了触发位置，更新到 0.7.3 后这三个点不会再卡。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section id="comments" class="section">
+          <div class="section-header">
+            <h2>玩家评论与实测反馈</h2>
+            <p class="sub">14 条来自不同玩家的具体条目讨论</p>
+          </div>
+          <div class="comment-grid">
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">夜</span><span class="comment-name">夜航星</span><span class="comment-time">11-07</span></div>
+              <p class="comment-body">录了 12 次循环对比，<em>虚空回响改 22 秒之后不补星尘箭 DPS 掉得厉害</em>，补了又缺蓝。最后我还是把引力井拖出来了，控场至少不浪费。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">齿</span><span class="comment-name">齿轮与发条</span><span class="comment-time">11-06</span></div>
+              <p class="comment-body">双影奇境第 6 章那个分屏顺序，原来攻略写反了左边先动，我和朋友卡了半小时。改了之后确实先左后右，<em>这游戏合作解谜的提示做得太少了</em>。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">北</span><span class="comment-name">北山老六</span><span class="comment-time">11-06</span></div>
+              <p class="comment-body">刷新点少两个无所谓，反正隧道东侧我从来不去。但现在雷达站地下室人太多了，一局能撞三队，<em>单点收益高归高，能不能活着出去另说</em>。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">半</span><span class="comment-name">半精灵游侠</span><span class="comment-time">11-05</span></div>
+              <p class="comment-body">5E 扩展 2.1 版那个半精灵变体终于修了，2.0 的时候属性加值凭空少 2 点，我捏了三次脸才发现。加载顺序也确实要放前面，<em>和战术扩展一起用的时候反了直接不生效</em>。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">沉</span><span class="comment-name">沉没的灯塔</span><span class="comment-time">11-05</span></div>
+              <p class="comment-body">第三章更新后我读档回去看了，老陈的后日谈写得挺克制，没强行煽情。就是<em>要读分歧点之前的自动存档这点有点麻烦</em>，谁会在那儿存啊。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">格</span><span class="comment-name">格斗区路人</span><span class="comment-time">11-04</span></div>
+              <p class="comment-body">影隆胜率 57% 其实不算高，主要是八强那几个选手本来就爱用。决赛输的那场明显是地图 ban 错了，<em>夜幕码头放给嘉米就是送</em>。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">苔</span><span class="comment-name">苔原徒步中</span><span class="comment-time">11-03</span></div>
+              <p class="comment-body">木屋那个卡死我遇到了，0.7.3 更新完回去试确实好了。剧情推进太慢了，走了 40 分钟还在第二章，<em>希望正式版压缩一下走路时间</em>。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">钴</span><span class="comment-name">钴蓝车站常客</span><span class="comment-time">11-02</span></div>
+              <p class="comment-body">第 7 关限时改成 120 秒之后舒服多了，原来 90 秒纯靠背板。不过语音播报的提示音有点吵，<em>希望能单独关掉语音只留视觉提示</em>。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">星</span><span class="comment-name">星核收藏家</span><span class="comment-time">11-01</span></div>
+              <p class="comment-body">第三个结局我回响用了 5 次，怎么读档都不对，后来按攻略数了一遍才发现超了。这条件<em>游戏里压根没提示，全靠玩家自己记次数</em>，设计得有点刁难人。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">暗</span><span class="comment-name">暗区跑刀仔</span><span class="comment-time">10-31</span></div>
+              <p class="comment-body">热力图那个数据我信一半，雷达站地下室确实人多，但缆车控制室其实也不少，<em>官方统计可能只算了搜索次数没算交火次数</em>。反正我最近改走西侧缆车线了。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">碎</span><span class="comment-name">碎片回声</span><span class="comment-time">10-30</span></div>
+              <p class="comment-body">试玩 6 小时流程说得过去，但<em>后期两关的谜题重复度有点高</em>，都是找三个碎片开门。美术和音乐加分，玩法上期待正式版加点新东西。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">博</span><span class="comment-name">博德之门菜鸟</span><span class="comment-time">10-29</span></div>
+              <p class="comment-body">按加载顺序排了，法术列表里能看到新增的 14 个，但<em>地底侏儒的黑暗视觉好像没生效</em>？不知道是不是和别的模组冲突。先凑合玩，等作者更新。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">竞</span><span class="comment-name">竞技场边缘人</span><span class="comment-time">10-28</span></div>
+              <p class="comment-body">CPT 八强的地图 ban 率数据有意思，训练场被 ban 六成说明大家都不想打纯对枪。不过<em>决赛第三场那个嘉米翻盘纯属对手失误</em>，跟角色强度关系不大。</p>
+            </div>
+            <div class="comment-card">
+              <div class="comment-header"><span class="comment-avatar">路</span><span class="comment-name">路过的猫</span><span class="comment-time">10-27</span></div>
+              <p class="comment-body">不玩格斗也不玩射击，就看看独立游戏评测。苔原信使的卡死修得挺快，<em>比某些大厂补丁效率高</em>。钴蓝车站的语音播报其实可以关，设置里找一下。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section id="news" class="section">
+          <div class="section-header">
+            <h2>相关资讯速递</h2>
+            <p class="sub">6 条带具体时间、数字或当事方的动态</p>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <div class="news-meta"><span>2026-11-08</span><span>官方公告</span></div>
+              <div class="news-title">星穹遗迹 1.4.2b 热修上线，冷却显示错误修正</div>
+              <div class="news-summary">热修包体约 340MB，除 UI 显示外还修复了第七章星核交付后任务追踪残留的问题。玩家“夜航星”的实测视频显示热修后冷却读秒从 18 秒变为 22 秒。</div>
+            </div>
+            <div class="news-item">
+              <div class="news-meta"><span>2026-11-07</span><span>暗区突围运营团队</span></div>
+              <div class="news-title">北山禁区物资点缩减至 5 个，单点产出上调 40%</div>
+              <div class="news-summary">被移除的隧道东侧和缆车南站合计只占原搜索次数的 11%。官方在公告末尾附了新的撤离路线建议图，建议出生点在西侧的玩家优先走缆车控制室。</div>
+            </div>
+            <div class="news-item">
+              <div class="news-meta"><span>2026-11-05</span><span>CPT 赛事组委会</span></div>
+              <div class="news-title">CPT 2026 中国区对战记录公开，影隆胜率 57%</div>
+              <div class="news-summary">15 场对局的帧数数据同步上传，其中 8 场出现“完美格挡”判定，合计 23 次。决赛 MVP 由使用嘉米的选手“老白”获得，尽管其角色胜率仅 40%。</div>
+            </div>
+            <div class="news-item">
+              <div class="news-meta"><span>2026-11-04</span><span>MOD 作者“银龙”</span></div>
+              <div class="news-title">5E 规则扩展 2.1 版发布，新增 14 个法术和 3 个亚种</div>
+              <div class="news-summary">作者在发布页列出 2.0 版属性加值丢失的具体原因（角色创建流程接口差异），并承诺下一版将加入半精灵变体的独立测试存档。当前下载量 1.7 万。</div>
+            </div>
+            <div class="news-item">
+              <div class="news-meta"><span>2026-11-03</span><span>沉没意志开发组</span></div>
+              <div class="news-title">第三章双结局后日谈更新，存档兼容但有条件</div>
+              <div class="news-summary">更新包体 1.2GB，新增文本约 4000 字。开发组在公告里写明：已过分歧点的存档需要读取更早的自动存档才能看到后日谈，自动存档保留最近 5 个节点。</div>
+            </div>
+            <div class="news-item">
+              <div class="news-meta"><span>2026-11-01</span><span>钴蓝车站开发者</span></div>
+              <div class="news-title">钴蓝车站 1.2 版延长第 7 关限时，增加语音提示</div>
+              <div class="news-summary">限时从 90 秒改到 120 秒，语音播报覆盖 6 个关键谜题节点。开发者引用玩家问卷数据：第 7 关的卡关率从 47% 降至 22%，但仍有玩家反馈语音提示过于频繁。</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section id="recommend" class="section">
+          <div class="section-header">
+            <h2>相关推荐方向</h2>
+            <p class="sub">按具体内容方向和条目名索引</p>
+          </div>
+          <div class="recommend-tags">
+            <a href="/#featured">星穹遗迹结局条件</a>
+            <a href="/#featured">暗区突围北山禁区</a>
+            <a href="/#featured">CPT2026 八强数据</a>
+            <a href="/#featured">5E 规则扩展 MOD</a>
+            <a href="/#featured">沉没意志第三章</a>
+            <a href="/#guide">双影奇境分屏解谜</a>
+            <a href="/#updates">苔原信使卡死修复</a>
+            <a href="/#updates">钴蓝车站难度调整</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：热门榜单 + 创作者证言 -->
+        <section id="extra" class="section">
+          <div class="section-header">
+            <h2>条目热度榜与创作者反馈</h2>
+            <p class="sub">按 11 月 1 日至 8 日阅读与收藏量排序</p>
+          </div>
+          <div class="extra-grid">
+            <div class="extra-panel">
+              <h3>本周条目热度榜 <span class="badge">11-01 至 11-08</span></h3>
+              <ol class="top-list">
+                <li><span class="rank-num">1</span><div><span class="top-title">星穹遗迹全 4 结局触发条件表</span><span class="top-desc">阅读 4.8k · 收藏 1.2k · 更新 11-07</span></div></li>
+                <li><span class="rank-num">2</span><div><span class="top-title">暗区突围北山禁区 5 个高收益刷新点</span><span class="top-desc">阅读 3.9k · 收藏 892 · 更新 11-06</span></div></li>
+                <li><span class="rank-num">3</span><div><span class="top-title">虚空回响冷却增至 22 秒后的循环轴调整</span><span class="top-desc">阅读 3.3k · 收藏 647 · 更新 11-07</span></div></li>
+                <li><span class="rank-num">4</span><div><span class="top-title">CPT 2026 中国区八强角色胜率与地图选择</span><span class="top-desc">阅读 2.7k · 收藏 415 · 更新 11-05</span></div></li>
+                <li><span class="rank-num">5</span><div><span class="top-title">沉没意志第三章双结局分歧节点</span><span class="top-desc">阅读 2.1k · 收藏 308 · 更新 11-04</span></div></li>
+              </ol>
+            </div>
+            <div class="extra-panel">
+              <h3>创作者与玩家证言</h3>
+              <div class="testimonial-list">
+                <div class="testimonial-item">
+                  <p class="quote">“结局条件那条我是拿三个存档来回试的，回响次数数到第 4 次就知道肯定不对了。后来把计数过程录屏发出来，评论区有 23 条确认，才敢写成定论。”</p>
+                  <p class="author">— 夜航星，星穹遗迹攻略作者</p>
+                </div>
+                <div class="testimonial-item">
+                  <p class="quote">“北山禁区的新刷新点我跑了 20 局，雷达站地下室确实产出高，但撤离路上被伏击的概率也高。热力图给的是搜索次数，我给的是交火次数，两个数据合起来看才完整。”</p>
+                  <p class="author">— 北山老六，暗区突围跑图玩家</p>
+                </div>
+                <div class="testimonial-item">
+                  <p class="quote">“5E 扩展 2.1 版的加载顺序问题，作者说明页写得很清楚，但很多玩家没注意。我在评论区置顶了检查方法，就是看模组界面那两个编号，比 1 小就行。”</p>
+                  <p class="author">— 半精灵游侠，博德之门3 MOD 测试者</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 投稿互动 -->
+        <section id="contribute" class="section">
+          <div class="contribute-bar">
+            <div class="cb-text">
+              <h3>分享你的实测数据或攻略</h3>
+              <p>带版本号、具体数值和对照过程的条目会被优先收录。可提交结局条件、刷新点路线、MOD 兼容性测试、赛事对局拆解。</p>
+            </div>
+            <a href="/#contribute" class="btn-primary">提交条目</a>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="sidebar-right" aria-label="辅助信息">
+        <div class="side-card">
+          <h3>更新速览</h3>
+          <ul class="update-stream">
+            <li><strong>星穹遗迹 1.4.2b</strong><span class="time">11-08 热修 · 冷却显示修正</span></li>
+            <li><strong>暗区突围北山禁区</strong><span class="time">11-07 刷新点减至 5 个</span></li>
+            <li><strong>沉没意志第三章</strong><span class="time">11-06 新增双结局后日谈</span></li>
+            <li><strong>CPT 2026 对战记录</strong><span class="time">11-05 八强数据公开</span></li>
+            <li><strong>5E 规则扩展 2.1</strong><span class="time">11-04 新增 14 法术</span></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h3>热门标签</h3>
+          <div class="recommend-tags" style="gap:6px;">
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">星穹遗迹</a>
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">暗区突围</a>
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">CPT2026</a>
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">5E规则扩展</a>
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">沉没意志</a>
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">双影奇境</a>
+            <a href="/#featured" style="padding:4px 12px;font-size:12px;">苔原信使</a>
+          </div>
+        </div>
+        <div class="side-card">
+          <h3>快速分类</h3>
+          <ul class="rank-list">
+            <li><span class="num">·</span><a href="/#categories" class="item-name">新游评测</a><span class="meta">12条</span></li>
+            <li><span class="num">·</span><a href="/#categories" class="item-name">版本更新</a><span class="meta">23条</span></li>
+            <li><span class="num">·</span><a href="/#categories" class="item-name">隐藏任务</a><span class="meta">41条</span></li>
+            <li><span class="num">·</span><a href="/#categories" class="item-name">装备配装</a><span class="meta">67条</span></li>
+            <li><span class="num">·</span><a href="/#categories" class="item-name">赛事复盘</a><span class="meta">9条</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="logo-text">9178.cn网页</div>
+        <p>游戏资讯与攻略条目聚合，覆盖 2026 年 10 月至 11 月的版本更新、隐藏机制、配装数据和赛事复盘。条目按发布日期和版本号持续补充，攻略类内容均标注实测来源或玩家反馈。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容分类</h4>
+        <ul>
+          <li><a href="/#featured">新游评测</a></li>
+          <li><a href="/#updates">版本更新</a></li>
+          <li><a href="/#featured">隐藏任务</a></li>
+          <li><a href="/#featured">装备配装</a></li>
+          <li><a href="/#featured">剧情解析</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>热门条目</h4>
+        <ul>
+          <li><a href="/#featured">星穹遗迹全结局</a></li>
+          <li><a href="/#featured">北山禁区刷新点</a></li>
+          <li><a href="/#featured">CPT 八强数据</a></li>
+          <li><a href="/#featured">5E 规则扩展</a></li>
+          <li><a href="/#featured">沉没意志第三章</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>参与互动</h4>
+        <ul>
+          <li><a href="/#contribute">投稿攻略</a></li>
+          <li><a href="/#comments">玩家评论</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#extra">热度榜单</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 9178.cn网页 · 内容条目均为示例数据，不构成购买或游玩建议</span>
+      <span class="update-note">最近更新：2026-11-08 · 星穹遗迹 1.4.2b 热修条目 · 暗区突围刷新点调整</span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端菜单
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+          const isOpen = mainNav.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+          menuToggle.textContent = isOpen ? '✕' : '☰';
+        });
+        // 点击导航链接收起
+        mainNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 740) {
+              mainNav.classList.remove('open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+              menuToggle.textContent = '☰';
+            }
+          });
+        });
+        // Esc 关闭
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.textContent = '☰';
+            menuToggle.focus();
+          }
+        });
+      }
+
+      // 回到顶部
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight * 0.8) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索筛选（在卡片和更新列表范围内）
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const allCards = document.querySelectorAll('.card');
+      const allUpdates = document.querySelectorAll('.update-list li');
+      const allNews = document.querySelectorAll('.news-item');
+      const allComments = document.querySelectorAll('.comment-card');
+      const searchEmpty = document.createElement('div');
+      searchEmpty.className = 'search-empty';
+      searchEmpty.textContent = '没有找到匹配的条目，换个关键词试试。';
+      const featuredSection = document.querySelector('#featured .card-grid');
+      if (featuredSection) featuredSection.after(searchEmpty);
+
+      function performSearch() {
+        const keyword = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+        if (!keyword) {
+          allCards.forEach(c => c.classList.remove('filtered-hide'));
+          allUpdates.forEach(u => u.classList.remove('filtered-hide'));
+          allNews.forEach(n => n.classList.remove('filtered-hide'));
+          allComments.forEach(c => c.classList.remove('filtered-hide'));
+          searchEmpty.classList.remove('show');
+          return;
+        }
+        allCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(keyword)) {
+            card.classList.remove('filtered-hide');
+            visibleCount++;
+          } else {
+            card.classList.add('filtered-hide');
+          }
+        });
+        allUpdates.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(keyword)) {
+            item.classList.remove('filtered-hide');
+            visibleCount++;
+          } else {
+            item.classList.add('filtered-hide');
+          }
+        });
+        allNews.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(keyword)) {
+            item.classList.remove('filtered-hide');
+            visibleCount++;
+          } else {
+            item.classList.add('filtered-hide');
+          }
+        });
+        allComments.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(keyword)) {
+            item.classList.remove('filtered-hide');
+            visibleCount++;
+          } else {
+            item.classList.add('filtered-hide');
+          }
+        });
+        if (visibleCount === 0) {
+          searchEmpty.classList.add('show');
+        } else {
+          searchEmpty.classList.remove('show');
+        }
+      }
+
+      if (searchBtn) searchBtn.addEventListener('click', performSearch);
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            performSearch();
+          }
+        });
+        searchInput.addEventListener('input', function() {
+          if (searchInput.value.trim() === '') {
+            performSearch();
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "9178.cn网页",
+    "description": "游戏资讯与攻略条目聚合，涵盖版本更新、隐藏机制、配装数据与赛事复盘",
+    "keywords": "9178.cn网页",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "《星穹遗迹》第三个结局到底要不要交出星核？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不交。第三个结局的触发条件里，“第七章是否交出星核”必须选“保留”。同时还要满足前六章累计使用“虚空回响”不超过 3 次。两个条件缺一不可。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "暗区突围北山禁区刷新点少了两个，收益是变高还是变低？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "单局期望收益变高。5 个点单次平均产出从 1.2 万提到 1.7 万柯恩币，期望值约 8.5 万，原 7 个点期望约 6.8 万。但 5 个点里有 3 个在开阔地带，撤离风险上升。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "博德之门3的5E规则扩展MOD和战术扩展MOD能一起装吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "能，但加载顺序必须把 5E 规则扩展排在战术扩展前面。顺序反了的话，战术扩展会覆盖法术表，新建角色时看不到新增的 14 个法术。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "沉没意志11月3日更新后，旧存档还能触发新结局吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "存档本身兼容，但新增的后日谈文本需要读取第三章分歧点之前的自动存档才能触发。如果旧存档已经过了分歧点，后日谈不会出现。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "CPT 2026 中国区决赛影隆胜率多少，为什么八强都在用？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "影隆出场 7 次胜 4 场，胜率 57%。八强选手选它的原因是中距离压制能力强，在“夜幕码头”和“废弃工厂”两张地图上有稳定牵制手段。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "苔原信使试玩版之前卡死的地方修好了吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "0.7.3 版修复了 3 处脚本卡死，分别在第二章木屋、第三章冰桥和第四章营地篝火。修复后旧存档可以直接继续，不需要重开。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+  </html>
